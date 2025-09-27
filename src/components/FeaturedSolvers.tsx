@@ -6,56 +6,62 @@ const FeaturedSolvers: React.FC = () => {
     {
       icon: Grid3X3,
       title: 'Wordle Solver',
-      description: 'Get the perfect word for today\'s Wordle puzzle with our advanced algorithm.',
+      description: 'Get the perfect word for today\'s Wordle puzzle with our advanced algorithm that analyzes letter patterns.',
       href: '/wordle-solver',
       gradient: 'from-yellow-400 to-orange-500',
       bgGradient: 'from-yellow-50 to-orange-50',
-      stats: '50K+ daily users'
+      stats: '50K+ daily users',
+      emoji: '🎯'
     },
     {
       icon: Target,
       title: 'Connections Hints',
-      description: 'Discover the hidden connections between words with subtle hints and solutions.',
+      description: 'Discover the hidden connections between words with subtle hints and AI-powered pattern recognition.',
       href: '/connections-hints',
       gradient: 'from-blue-400 to-indigo-500',
       bgGradient: 'from-blue-50 to-indigo-50',
-      stats: '30K+ daily users'
+      stats: '30K+ daily users',
+      emoji: '🔗'
     },
     {
       icon: Zap,
       title: 'Spelling Bee Solver',
-      description: 'Find all possible words and achieve Queen Bee status with our comprehensive solver.',
+      description: 'Find all possible words and achieve Queen Bee status with our comprehensive word database.',
       href: '/spelling-bee-solver',
       gradient: 'from-amber-400 to-yellow-500',
       bgGradient: 'from-amber-50 to-yellow-50',
-      stats: '25K+ daily users'
+      stats: '25K+ daily users',
+      emoji: '🐝'
     },
     {
       icon: BookOpen,
       title: 'Crossword Solver',
-      description: 'Solve crossword clues instantly with our extensive database and AI assistance.',
+      description: 'Solve crossword clues instantly with our extensive database and intelligent matching system.',
       href: '/crossword-solver',
       gradient: 'from-purple-400 to-pink-500',
       bgGradient: 'from-purple-50 to-pink-50',
-      stats: '40K+ daily users'
+      stats: '40K+ daily users',
+      emoji: '📰'
     },
     {
       icon: Shuffle,
       title: 'Word Unscrambler',
-      description: 'Unscramble any combination of letters to find valid words and solutions.',
+      description: 'Unscramble any combination of letters to find valid words with our lightning-fast algorithm.',
       href: '/word-unscrambler',
       gradient: 'from-green-400 to-teal-500',
       bgGradient: 'from-green-50 to-teal-50',
-      stats: '35K+ daily users'
+      stats: '35K+ daily users',
+      emoji: '🔀'
     },
     {
       icon: Hash,
       title: 'Anagram Solver',
-      description: 'Discover all possible anagrams for any word or phrase with lightning speed.',
+      description: 'Discover all possible anagrams for any word or phrase with our comprehensive anagram engine.',
       href: '/anagram-solver',
       gradient: 'from-red-400 to-rose-500',
       bgGradient: 'from-red-50 to-rose-50',
-      stats: '20K+ daily users'
+      stats: '20K+ daily users',
+      emoji: '🔄'
     }
   ];
 
@@ -76,55 +82,69 @@ const FeaturedSolvers: React.FC = () => {
           </p>
         </div>
 
-        {/* Solvers Grid */}
+        {/* Flip Cards Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredSolvers.map((solver, index) => (
             <div
               key={solver.title}
-              className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
+              className="flip-card h-80"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Background Gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${solver.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-              
-              {/* Content */}
-              <div className="relative p-8">
-                {/* Icon */}
-                <div className={`w-16 h-16 bg-gradient-to-r ${solver.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                  <solver.icon className="w-8 h-8 text-white" />
-                </div>
-
-                {/* Title and Description */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-teal-700 transition-colors duration-300">
-                  {solver.title}
-                </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {solver.description}
-                </p>
-
-                {/* Stats */}
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-sm font-medium text-gray-500">
-                    {solver.stats}
-                  </span>
+              <div className="flip-card-inner">
+                {/* Front Side */}
+                <div className="flip-card-front bg-white rounded-2xl shadow-lg border border-gray-100 p-8 flex flex-col items-center justify-center text-center">
+                  {/* Large Emoji Icon */}
+                  <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                    {solver.emoji}
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {solver.title}
+                  </h3>
+                  
+                  {/* Stats */}
                   <div className="flex items-center text-green-500">
                     <TrendingUp className="w-4 h-4 mr-1" />
-                    <span className="text-sm font-medium">Popular</span>
+                    <span className="text-sm font-medium">{solver.stats}</span>
                   </div>
                 </div>
 
-                {/* CTA Button */}
-                <a
-                  href={solver.href}
-                  className="inline-flex items-center justify-center w-full bg-gray-900 text-white py-3 px-6 rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200 group-hover:bg-gradient-to-r group-hover:from-teal-600 group-hover:to-lime-600"
-                >
-                  Try Solver
-                  <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" />
-                </a>
-              </div>
+                {/* Back Side */}
+                <div className={`flip-card-back bg-gradient-to-br ${solver.bgGradient} rounded-2xl shadow-lg border border-gray-100 p-8 flex flex-col justify-between relative overflow-hidden`}>
+                  {/* Background Emoji with Low Opacity */}
+                  <div className="absolute top-4 right-4 text-8xl opacity-10 pointer-events-none">
+                    {solver.emoji}
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className={`w-12 h-12 bg-gradient-to-r ${solver.gradient} rounded-xl flex items-center justify-center mb-4 shadow-lg`}>
+                      <solver.icon className="w-6 h-6 text-white" />
+                    </div>
 
-              {/* Hover Effect Border */}
-              <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-teal-200 transition-colors duration-300" />
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      {solver.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                      {solver.description}
+                    </p>
+                  </div>
+
+                  {/* CTA Button */}
+                  <a
+                    href={solver.href}
+                    className={`inline-flex items-center justify-center w-full bg-gradient-to-r ${solver.gradient} text-white py-3 px-6 rounded-xl font-medium hover:shadow-lg transition-all duration-200 transform hover:scale-105 relative z-10`}
+                  >
+                    Try {solver.title.replace(' Solver', '').replace(' Hints', '')}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </div>
+              </div>
             </div>
           ))}
         </div>

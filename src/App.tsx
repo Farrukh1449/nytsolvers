@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import SearchModal from './components/SearchModal';
+import FeaturedSolvers from './components/FeaturedSolvers';
 import SolutionsSection from './components/SolutionsSection';
 import AnswersSection from './components/AnswersSection';
 import Footer from './components/Footer';
@@ -68,6 +69,7 @@ function App() {
         return (
           <>
             <Hero onSearchOpen={() => setIsSearchOpen(true)} />
+            <FeaturedSolvers />
             <SolutionsSection />
             <AnswersSection />
           </>
