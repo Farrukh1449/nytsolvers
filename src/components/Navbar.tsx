@@ -65,20 +65,12 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchOpen }) => {
       title: 'Other Solvers',
       items: [
         { name: 'Scrabble Word Finder', href: '/scrabble-solver' },
-        { name: 'Jumble Solver', href: '/jumble-solver' },
-        { name: 'Words With Friends Solver', href: '/words-with-friends-solver' },
-        { name: 'Rhyme Finder', href: '/rhyme-finder' },
         { name: 'Word Unscrambler', href: '/word-unscrambler' },
-        { name: 'Crossword Solver', href: '/crossword-solver' },
         { name: 'Anagram Solver', href: '/anagram-solver' },
-        { name: 'Wordscapes Solver', href: '/wordscapes-solver' },
-        { name: 'Wordfeud Helper', href: '/wordfeud-helper' },
-        { name: 'Words of Wonder Solver', href: '/words-of-wonder-solver' },
-        { name: '4 Pics 1 Word Answer', href: '/4-pics-1-word' },
         { name: 'Quordle Solver', href: '/quordle-solver' },
-        { name: 'Octordle Solver', href: '/octordle-solver' },
-        { name: 'Word Cookies Solver', href: '/word-cookies-solver' },
-        { name: 'Word Chums Solver', href: '/word-chums-solver' }
+        { name: 'Crossword Solver', href: '/crossword-solver' },
+        { name: 'Words With Friends Solver', href: '/words-with-friends-solver' },
+        { name: 'Jumble Solver', href: '/jumble-solver' }
       ]
     },
     {
@@ -166,6 +158,18 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchOpen }) => {
                         )}
                       </div>
                     ))}
+                    
+                    {/* Show All Button for Other Solvers */}
+                    {section.title === 'Other Solvers' && (
+                      <div className="border-t border-gray-100 mt-2 pt-2">
+                        <a
+                          href="/all-solvers"
+                          className="flex items-center justify-center px-4 py-3 text-sm font-medium text-white bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-lg mx-2 transition-all duration-200"
+                        >
+                          Show All Solvers
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -226,6 +230,18 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchOpen }) => {
                   </div>
                 ))}
               </div>
+             
+             {/* Show All Button for Mobile - Other Solvers */}
+             {section.title === 'Other Solvers' && (
+               <div className="pl-4 mt-2">
+                 <a
+                   href="/all-solvers"
+                   className="block py-2 text-sm font-medium text-white bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-lg px-3 text-center transition-all duration-200"
+                 >
+                   Show All Solvers
+                 </a>
+               </div>
+             )}
             </div>
           ))}
         </div>

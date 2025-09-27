@@ -5,6 +5,7 @@ import SearchModal from './components/SearchModal';
 import FeaturedSolvers from './components/FeaturedSolvers';
 import Footer from './components/Footer';
 import WordleSolver from './pages/WordleSolver';
+import AllSolvers from './pages/AllSolvers';
 
 function App() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -16,6 +17,8 @@ function App() {
       const path = window.location.pathname;
       if (path === '/wordle-solver') {
         setCurrentPage('wordle-solver');
+      } else if (path === '/all-solvers') {
+        setCurrentPage('all-solvers');
       } else {
         setCurrentPage('home');
       }
@@ -39,6 +42,8 @@ function App() {
         
         if (path === '/wordle-solver') {
           setCurrentPage('wordle-solver');
+        } else if (path === '/all-solvers') {
+          setCurrentPage('all-solvers');
         } else {
           setCurrentPage('home');
         }
@@ -56,6 +61,8 @@ function App() {
     switch (currentPage) {
       case 'wordle-solver':
         return <WordleSolver />;
+      case 'all-solvers':
+        return <AllSolvers />;
       default:
         return (
           <>
