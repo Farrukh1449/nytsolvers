@@ -1,5 +1,5 @@
 import React from 'react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Grid3x3 as Grid3X3, Target, BookOpen, Twitter, Facebook, Instagram, Youtube, Mail, ExternalLink } from 'lucide-react';
 
 interface FooterLink {
