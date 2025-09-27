@@ -1,193 +1,166 @@
 import React from 'react';
-import { Grid3x3 as Grid3X3, Target, BookOpen, Twitter, Facebook, Instagram, Youtube, Mail, ExternalLink } from 'lucide-react';
+import { Grid3x3 as Grid3X3, Target, Zap, BookOpen, Shuffle, Hash, ArrowRight, TrendingUp } from 'lucide-react';
 
-const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear();
-
-  const footerSections = [
+const FeaturedSolvers: React.FC = () => {
+  const featuredSolvers = [
     {
-      title: 'NYT Solvers',
-      links: [
-        { name: 'Wordle Solver', href: '/wordle-solver' },
-        { name: 'Spelling Bee Solver', href: '/spelling-bee-solver' },
-        { name: 'Letter Boxed Solver', href: '/letter-boxed-solver' },
-        { name: '3-12 Letter Words', href: '/letter-words' }
-      ]
+      icon: Grid3X3,
+      title: 'Wordle Solver',
+      description: 'Get the perfect word for today\'s Wordle puzzle with our advanced algorithm that analyzes letter patterns.',
+      href: '/wordle-solver',
+      gradient: 'from-yellow-400 to-orange-500',
+      bgGradient: 'from-yellow-50 to-orange-50',
+      stats: '50K+ daily users',
+      emoji: '🎯'
     },
     {
-      title: 'NYT Answer Pages',
-      links: [
-        { name: 'Connections Hints', href: '/connections-hints' },
-        { name: 'Wordle Hints', href: '/wordle-hints' },
-        { name: 'Strands Hints', href: '/strands-hints' },
-        { name: 'Crossword Hints', href: '/crossword-hints' }
-      ]
+      icon: Target,
+      title: 'Connections Hints',
+      description: 'Discover the hidden connections between words with subtle hints and AI-powered pattern recognition.',
+      href: '/connections-hints',
+      gradient: 'from-blue-400 to-indigo-500',
+      bgGradient: 'from-blue-50 to-indigo-50',
+      stats: '30K+ daily users',
+      emoji: '🔗'
     },
     {
-      title: 'Other Solvers',
-      links: [
-        { name: 'Scrabble Word Finder', href: '/scrabble-solver' },
-        { name: 'Word Unscrambler', href: '/word-unscrambler' },
-        { name: 'Anagram Solver', href: '/anagram-solver' },
-        { name: 'Quordle Solver', href: '/quordle-solver' }
-      ]
+      icon: Zap,
+      title: 'Spelling Bee Solver',
+      description: 'Find all possible words and achieve Queen Bee status with our comprehensive word database.',
+      href: '/spelling-bee-solver',
+      gradient: 'from-amber-400 to-yellow-500',
+      bgGradient: 'from-amber-50 to-yellow-50',
+      stats: '25K+ daily users',
+      emoji: '🐝'
     },
     {
-      title: 'Other Answer Pages',
-      links: [
-        { name: 'Betweenle Hints', href: '/betweenle-hints' },
-        { name: 'Quordle Hints', href: '/quordle-hints' },
-        { name: 'Blossom Hints', href: '/blossom-hints' },
-        { name: 'Word Salad Hints', href: '/word-salad-hints' }
-      ]
+      icon: BookOpen,
+      title: 'Crossword Solver',
+      description: 'Solve crossword clues instantly with our extensive database and intelligent matching system.',
+      href: '/crossword-solver',
+      gradient: 'from-purple-400 to-pink-500',
+      bgGradient: 'from-purple-50 to-pink-50',
+      stats: '40K+ daily users',
+      emoji: '📰'
+    },
+    {
+      icon: Shuffle,
+      title: 'Word Unscrambler',
+      description: 'Unscramble any combination of letters to find valid words with our lightning-fast algorithm.',
+      href: '/word-unscrambler',
+      gradient: 'from-green-400 to-teal-500',
+      bgGradient: 'from-green-50 to-teal-50',
+      stats: '35K+ daily users',
+      emoji: '🔀'
+    },
+    {
+      icon: Hash,
+      title: 'Anagram Solver',
+      description: 'Discover all possible anagrams for any word or phrase with our comprehensive anagram engine.',
+      href: '/anagram-solver',
+      gradient: 'from-red-400 to-rose-500',
+      bgGradient: 'from-red-50 to-rose-50',
+      stats: '20K+ daily users',
+      emoji: '🔄'
     }
   ];
 
-  const socialLinks = [
-    { icon: Twitter, href: '#', name: 'Twitter' },
-    { icon: Facebook, href: '#', name: 'Facebook' },
-    { icon: Instagram, href: '#', name: 'Instagram' },
-    { icon: Youtube, href: '#', name: 'YouTube' }
-  ];
-
-  const gameIcons = [
-    { icon: Grid3X3, color: 'from-yellow-400 to-orange-500' },
-    { icon: Target, color: 'from-blue-400 to-indigo-500' },
-    { icon: BookOpen, color: 'from-purple-400 to-pink-500' }
-  ];
-
   return (
-    <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-teal-500/10 to-lime-500/10 rounded-full blur-xl animate-pulse" />
-        <div className="absolute bottom-10 right-10 w-48 h-48 bg-gradient-to-r from-yellow-500/5 to-orange-500/5 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-r from-lime-500/8 to-teal-500/8 rounded-full blur-lg animate-pulse" style={{ animationDelay: '2s' }} />
-        
-        {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="h-full w-full" style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',
-            backgroundSize: '50px 50px'
-          }} />
-        </div>
-      </div>
-
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Top Section */}
-        <div className="grid lg:grid-cols-6 gap-8 mb-8">
-          {/* Brand Section */}
-          <div className="lg:col-span-2">
-            <div className="mb-4">
-              <a href="/" className="inline-block">
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-lime-400 bg-clip-text text-transparent">
-                  NYTSolvers
-                </h3>
-              </a>
-              <p className="text-gray-400 mt-3 leading-relaxed text-sm">
-                Your go-to destination for solving New York Times puzzles and word games. 
-                Get instant solutions, hints, and powerful tools to conquer any challenge.
-              </p>
-            </div>
-
-            {/* Game Icons */}
-            <div className="flex items-center space-x-3 mb-4">
-              {gameIcons.map((game, index) => (
-                <div 
-                  key={index}
-                  className={`w-8 h-8 bg-gradient-to-r ${game.color} rounded-lg flex items-center justify-center transform hover:scale-110 transition-all duration-300 cursor-pointer`}
-                >
-                  <game.icon className="w-4 h-4 text-white" />
-                </div>
-              ))}
-            </div>
-
-            {/* Newsletter Signup */}
-            <div className="mb-6">
-              <h4 className="font-semibold mb-2 text-white text-sm">Stay Updated</h4>
-              <div className="flex max-w-sm">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-3 py-2 bg-gray-800 border border-gray-600 rounded-l-lg focus:outline-none focus:border-teal-400 transition-colors duration-200 text-white placeholder-gray-400 text-sm"
-                />
-                <button className="px-3 py-2 bg-gradient-to-r from-teal-500 to-lime-500 text-white rounded-r-lg hover:from-teal-600 hover:to-lime-600 transition-all duration-200 flex items-center">
-                  <Mail className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex space-x-3">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-gradient-to-r hover:from-teal-500 hover:to-lime-500 transition-all duration-300 transform hover:scale-110"
-                  aria-label={social.name}
-                >
-                  <social.icon className="w-4 h-4" />
-                </a>
-              ))}
-            </div>
+    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center bg-gradient-to-r from-teal-100 to-lime-100 text-teal-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <TrendingUp className="w-4 h-4 mr-2" />
+            Most Popular
           </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+            Featured <span className="bg-gradient-to-r from-teal-600 to-lime-600 bg-clip-text text-transparent">Solvers</span>
+          </h2>
+          <p className="text-base text-gray-600 max-w-xl mx-auto">
+            Our most trusted and frequently used game solvers, designed to help you conquer any word puzzle challenge.
+          </p>
+        </div>
 
-          {/* Links Sections */}
-          {footerSections.map((section, index) => (
-            <div key={section.title} className="lg:col-span-1">
-              <h4 className="font-semibold mb-3 text-white text-sm">{section.title}</h4>
-              <ul className="space-y-2">
-                {section.links.map((link) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className="text-gray-400 hover:text-teal-400 transition-colors duration-200 text-xs flex items-center group"
-                    >
-                      {link.name}
-                      <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-200" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
+        {/* Flip Cards Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          {featuredSolvers.map((solver, index) => (
+            <div
+              key={solver.title}
+              className="flip-card h-48"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="flip-card-inner">
+                {/* Front Side */}
+                <div className="flip-card-front bg-white rounded-xl shadow-md border border-gray-100 p-4 flex flex-col items-center justify-center text-center">
+                  {/* Large Emoji Icon */}
+                  <div className="text-3xl mb-3 transform group-hover:scale-110 transition-transform duration-300">
+                    {solver.emoji}
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    {solver.title}
+                  </h3>
+                  
+                  {/* Stats */}
+                  <div className="flex items-center text-green-500">
+                    <TrendingUp className="w-3 h-3 mr-1" />
+                    <span className="text-xs font-medium">{solver.stats}</span>
+                  </div>
+                </div>
+
+                {/* Back Side */}
+                <div className={`flip-card-back bg-gradient-to-br ${solver.bgGradient} rounded-lg shadow-md border border-gray-100 p-3 flex flex-col justify-between relative overflow-hidden`}>
+                  <div className="absolute top-1 right-1 text-3xl opacity-10 pointer-events-none">
+                    {solver.emoji}
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className={`w-6 h-6 bg-gradient-to-r ${solver.gradient} rounded-lg flex items-center justify-center mb-1 shadow-md`}>
+                      <solver.icon className="w-3 h-3 text-white" />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-sm font-bold text-gray-900 mb-1">
+                      {solver.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-gray-600 text-xs leading-relaxed mb-2">
+                      {solver.description}
+                    </p>
+                  </div>
+
+                  {/* CTA Button */}
+                  <a
+                    href={solver.href}
+                    className={`inline-flex items-center justify-center w-full bg-gradient-to-r ${solver.gradient} text-white py-1 px-2 rounded-lg font-medium hover:shadow-md transition-all duration-200 transform hover:scale-105 relative z-10 text-xs`}
+                  >
+                    Try {solver.title.replace(' Solver', '').replace(' Hints', '')}
+                    <ArrowRight className="w-2 h-2 ml-1" />
+                  </a>
+                </div>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-gray-700 mb-6" />
-
-        {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
-          {/* Copyright */}
-          <div className="text-gray-400 text-xs">
-            © {currentYear} NYTSolvers. All rights reserved.
-          </div>
-
-          {/* Links */}
-          <div className="flex items-center space-x-4 text-xs">
-            <a href="/privacy" className="text-gray-400 hover:text-teal-400 transition-colors duration-200">
-              Privacy Policy
-            </a>
-            <a href="/terms" className="text-gray-400 hover:text-teal-400 transition-colors duration-200">
-              Terms of Service
-            </a>
-            <a href="/contact" className="text-gray-400 hover:text-teal-400 transition-colors duration-200">
-              Contact
-            </a>
-            <a href="/about" className="text-gray-400 hover:text-teal-400 transition-colors duration-200">
-              About
-            </a>
-          </div>
-
-          {/* Performance Badge */}
-          <div className="flex items-center space-x-2 text-xs text-gray-400">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span>Optimized for Core Web Vitals</span>
-          </div>
+        {/* View All Button */}
+        <div className="text-center mt-6">
+          <a
+            href="/all-solvers"
+            className="inline-flex items-center bg-gradient-to-r from-teal-500 to-lime-500 text-white px-3 py-1.5 rounded-xl font-semibold text-sm hover:from-teal-600 hover:to-lime-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            View All Solvers
+            <ArrowRight className="w-3 h-3 ml-1" />
+          </a>
         </div>
       </div>
-    </footer>
+    </section>
   );
 };
 
-export default Footer;
+export default FeaturedSolvers;
