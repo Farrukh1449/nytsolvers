@@ -73,32 +73,32 @@ const WordleSolver: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-white to-orange-50 pt-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-white to-orange-50 pt-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <div className="inline-flex items-center bg-gradient-to-r from-yellow-100 to-orange-100 text-yellow-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
             <Target className="w-4 h-4 mr-2" />
             Wordle Solver
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Wordle <span className="bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">Solver</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Enter your known letters and constraints to find the perfect Wordle solution
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-6">
           {/* Input Section */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-6">
             {/* Known Letters (Green) */}
-            <div className="bg-white rounded-2xl shadow-lg p-8">
+            <div className="bg-white rounded-2xl shadow-lg p-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
                 <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
                 Known Letters (Green)
               </h3>
-              <p className="text-gray-600 mb-6">Enter letters you know are in the correct position</p>
+              <p className="text-gray-600 mb-4">Enter letters you know are in the correct position</p>
               
               <div className="flex space-x-3 justify-center">
                 {knownLetters.map((letter, index) => (
