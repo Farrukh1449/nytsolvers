@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-[300px] py-12">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Top Section */}
         <div className="grid lg:grid-cols-6 gap-8 mb-8">
           {/* Brand Section */}

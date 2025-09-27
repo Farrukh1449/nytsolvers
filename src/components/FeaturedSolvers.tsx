@@ -67,7 +67,7 @@ const FeaturedSolvers: React.FC = () => {
 
   return (
     <section className="py-16 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-6xl mx-auto px-[300px]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-gradient-to-r from-teal-100 to-lime-100 text-teal-700 px-4 py-2 rounded-full text-sm font-medium mb-4">

@@ -218,24 +218,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Mobile Responsive Adjustments */
-@media (max-width: 1200px) {
-  .max-w-6xl {
-    max-width: 100%;
-  }
-  
-  [class*="px-[300px]"] {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  [class*="px-[300px]"] {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-/* Custom utilities */
 .text-balance {
   text-wrap: balance;
 }

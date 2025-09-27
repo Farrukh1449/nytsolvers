@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
         }} />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-[300px] text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main Brand */}
         <div className="mb-8 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
