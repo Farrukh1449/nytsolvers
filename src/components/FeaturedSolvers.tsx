@@ -161,6 +161,9 @@ const FeaturedSolvers: React.FC = () => {
           </a>
         </div>
       </div>
+    )
+    )
+    }
     </section>
   );
 };
