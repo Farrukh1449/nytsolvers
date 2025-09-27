@@ -113,7 +113,6 @@ const FeaturedSolvers: React.FC = () => {
                 {/* Back Side */}
                 <div className={`flip-card-back bg-gradient-to-br ${solver.bgGradient} rounded-xl shadow-md border border-gray-100 p-4 flex flex-col justify-between relative overflow-hidden`}>
                   {/* Background Emoji with Low Opacity */}
-                <div className={`flip-card-back bg-gradient-to-br ${solver.bgGradient} rounded-xl shadow-md border border-gray-100 p-4 flex flex-col justify-between relative overflow-hidden`}>
                   <div className="absolute top-3 right-3 text-6xl opacity-10 pointer-events-none">
                     {solver.emoji}
                   </div>
@@ -130,22 +129,21 @@ const FeaturedSolvers: React.FC = () => {
                       {solver.title}
                     </h3>
                     
-                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors duration-300">
                     <p className="text-gray-600 text-xs leading-relaxed mb-4">
                       {solver.description}
-                <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                    </p>
                   </div>
 
                   {/* CTA Button */}
                   <a
                     href={solver.href}
                     className={`inline-flex items-center justify-center w-full bg-gradient-to-r ${solver.gradient} text-white py-2 px-4 rounded-lg font-medium hover:shadow-md transition-all duration-200 transform hover:scale-105 relative z-10 text-sm`}
-                  className="inline-flex items-center justify-center w-full bg-gray-900 text-white py-3 px-4 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 text-sm"
-                    <Clock className="w-4 h-4 mr-2" />
+                  >
+                    Try Now
                     <ArrowRight className="w-4 h-4 ml-2" />
-                  <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" />
+                  </a>
                 </div>
-              <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-blue-200 transition-colors duration-300" />
+              </div>
             </div>
           ))}
         </div>
