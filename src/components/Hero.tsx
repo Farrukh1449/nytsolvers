@@ -34,7 +34,7 @@ const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-teal-50">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-teal-50 pt-20">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="h-full w-full" style={{
@@ -43,38 +43,38 @@ const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
         }} />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-[300px] text-center">
         {/* Main Brand */}
         <div className="mb-8 animate-fade-in-up">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
             <span className="bg-gradient-to-r from-teal-500 to-teal-600 bg-clip-text text-transparent">
               NYT
             </span>
             <span className="text-gray-900">Solvers</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-12">
+          <p className="text-base md:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed mb-6">
             Expert solutions and daily answers for New York Times games, Wordle, Connections, and more word puzzles
           </p>
         </div>
 
         {/* Search Bar */}
-        <div className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <div className="max-w-2xl mx-auto relative">
+        <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="max-w-xl mx-auto relative">
             <div className="relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
               <div className="flex items-center">
-                <div className="pl-6 pr-4 py-4">
+                <div className="pl-4 pr-3 py-3">
                   <Search className="w-5 h-5 text-gray-400" />
                 </div>
                 <input
                   type="text"
                   placeholder="Search for any game solver or daily answers..."
-                  className="flex-1 py-4 pr-4 text-lg placeholder-gray-400 border-none outline-none focus:ring-0"
+                  className="flex-1 py-3 pr-3 text-base placeholder-gray-400 border-none outline-none focus:ring-0"
                   onClick={onSearchOpen}
                   readOnly
                 />
                 <button
                   onClick={onSearchOpen}
-                  className="mr-2 px-6 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl font-medium hover:from-teal-600 hover:to-teal-700 transition-all duration-200 flex items-center space-x-2"
+                  className="mr-2 px-4 py-2 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-lg font-medium hover:from-teal-600 hover:to-teal-700 transition-all duration-200 flex items-center space-x-2"
                 >
                   <span>Search</span>
                   <Search className="w-4 h-4" />
@@ -85,8 +85,8 @@ const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
         </div>
 
         {/* Popular Solvers */}
-        <div className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <p className="text-gray-500 mb-6 font-medium">Popular solvers:</p>
+        <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <p className="text-gray-500 mb-3 font-medium text-sm">Popular solvers:</p>
           <div className="flex flex-wrap justify-center gap-4">
             {popularSolvers.map((solver, index) => (
               <a
@@ -95,7 +95,7 @@ const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
                 className={`inline-flex items-center space-x-3 px-6 py-3 bg-white border border-gray-200 rounded-full font-medium text-gray-700 transition-all duration-200 transform hover:scale-105 hover:shadow-md ${solver.color}`}
                 style={{ animationDelay: `${0.5 + index * 0.1}s` }}
               >
-                <span className="text-lg">{solver.icon}</span>
+                <span className="text-base">{solver.icon}</span>
                 <span>{solver.name}</span>
               </a>
             ))}
@@ -103,23 +103,23 @@ const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
         </div>
 
         {/* Main Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+        <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
           <button
             onClick={onSearchOpen}
-            className="group px-8 py-4 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-2xl font-semibold text-lg hover:from-teal-600 hover:to-teal-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center space-x-3"
+            className="group px-6 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl font-semibold text-base hover:from-teal-600 hover:to-teal-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2"
           >
             <Zap className="w-5 h-5" />
             <span>Find Solutions</span>
           </button>
           
-          <button className="group px-8 py-4 bg-white text-gray-700 rounded-2xl font-semibold text-lg border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-3">
+          <button className="group px-6 py-3 bg-white text-gray-700 rounded-xl font-semibold text-base border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2">
             <Calendar className="w-5 h-5" />
             <span>Daily Answers</span>
           </button>
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
           {[
             { number: '25+', label: 'Game Solvers', color: 'from-teal-500 to-teal-600' },
             { number: '50K+', label: 'Daily Users', color: 'from-lime-500 to-lime-600' },
@@ -130,7 +130,7 @@ const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
               <div className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300`}>
                 {stat.number}
               </div>
-              <div className="text-gray-600 text-sm md:text-base">
+              <div className="text-gray-600 text-xs md:text-sm">
                 {stat.label}
               </div>
             </div>

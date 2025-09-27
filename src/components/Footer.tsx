@@ -73,60 +73,60 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="relative z-10 max-w-6xl mx-auto px-[300px] py-12">
         {/* Top Section */}
-        <div className="grid lg:grid-cols-6 gap-12 mb-12">
+        <div className="grid lg:grid-cols-6 gap-8 mb-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="mb-6">
+            <div className="mb-4">
               <a href="/" className="inline-block">
-                <h3 className="text-3xl font-bold bg-gradient-to-r from-teal-400 to-lime-400 bg-clip-text text-transparent">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-lime-400 bg-clip-text text-transparent">
                   NYTSolvers
                 </h3>
               </a>
-              <p className="text-gray-400 mt-4 leading-relaxed">
+              <p className="text-gray-400 mt-3 leading-relaxed text-sm">
                 Your go-to destination for solving New York Times puzzles and word games. 
                 Get instant solutions, hints, and powerful tools to conquer any challenge.
               </p>
             </div>
 
             {/* Game Icons */}
-            <div className="flex items-center space-x-4 mb-6">
+            <div className="flex items-center space-x-3 mb-4">
               {gameIcons.map((game, index) => (
                 <div 
                   key={index}
-                  className={`w-10 h-10 bg-gradient-to-r ${game.color} rounded-lg flex items-center justify-center transform hover:scale-110 transition-all duration-300 cursor-pointer`}
+                  className={`w-8 h-8 bg-gradient-to-r ${game.color} rounded-lg flex items-center justify-center transform hover:scale-110 transition-all duration-300 cursor-pointer`}
                 >
-                  <game.icon className="w-5 h-5 text-white" />
+                  <game.icon className="w-4 h-4 text-white" />
                 </div>
               ))}
             </div>
 
             {/* Newsletter Signup */}
-            <div className="mb-8">
-              <h4 className="font-semibold mb-3 text-white">Stay Updated</h4>
+            <div className="mb-6">
+              <h4 className="font-semibold mb-2 text-white text-sm">Stay Updated</h4>
               <div className="flex max-w-sm">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-2 bg-gray-800 border border-gray-600 rounded-l-lg focus:outline-none focus:border-teal-400 transition-colors duration-200 text-white placeholder-gray-400"
+                  className="flex-1 px-3 py-2 bg-gray-800 border border-gray-600 rounded-l-lg focus:outline-none focus:border-teal-400 transition-colors duration-200 text-white placeholder-gray-400 text-sm"
                 />
-                <button className="px-4 py-2 bg-gradient-to-r from-teal-500 to-lime-500 text-white rounded-r-lg hover:from-teal-600 hover:to-lime-600 transition-all duration-200 flex items-center">
+                <button className="px-3 py-2 bg-gradient-to-r from-teal-500 to-lime-500 text-white rounded-r-lg hover:from-teal-600 hover:to-lime-600 transition-all duration-200 flex items-center">
                   <Mail className="w-4 h-4" />
                 </button>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               {socialLinks.map((social, index) => (
                 <a
                   key={social.name}
                   href={social.href}
-                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-gradient-to-r hover:from-teal-500 hover:to-lime-500 transition-all duration-300 transform hover:scale-110"
+                  className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-gradient-to-r hover:from-teal-500 hover:to-lime-500 transition-all duration-300 transform hover:scale-110"
                   aria-label={social.name}
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
@@ -135,13 +135,13 @@ const Footer: React.FC = () => {
           {/* Links Sections */}
           {footerSections.map((section, index) => (
             <div key={section.title} className="lg:col-span-1">
-              <h4 className="font-semibold mb-4 text-white">{section.title}</h4>
-              <ul className="space-y-3">
+              <h4 className="font-semibold mb-3 text-white text-sm">{section.title}</h4>
+              <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-400 hover:text-teal-400 transition-colors duration-200 text-sm flex items-center group"
+                      className="text-gray-400 hover:text-teal-400 transition-colors duration-200 text-xs flex items-center group"
                     >
                       {link.name}
                       <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-200" />
@@ -154,17 +154,17 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 mb-8" />
+        <div className="border-t border-gray-700 mb-6" />
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
           {/* Copyright */}
-          <div className="text-gray-400 text-sm">
+          <div className="text-gray-400 text-xs">
             © {currentYear} NYTSolvers. All rights reserved.
           </div>
 
           {/* Links */}
-          <div className="flex items-center space-x-6 text-sm">
+          <div className="flex items-center space-x-4 text-xs">
             <a href="/privacy" className="text-gray-400 hover:text-teal-400 transition-colors duration-200">
               Privacy Policy
             </a>

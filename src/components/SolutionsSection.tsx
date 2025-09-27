@@ -60,53 +60,53 @@ const SolutionsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 bg-white">
+      <div className="max-w-6xl mx-auto px-[300px]">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="inline-flex items-center bg-gradient-to-r from-teal-100 to-lime-100 text-teal-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
             <Zap className="w-4 h-4 mr-2" />
             Find Solutions
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Powerful <span className="bg-gradient-to-r from-teal-600 to-lime-600 bg-clip-text text-transparent">Game Solvers</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Advanced algorithms and comprehensive databases to help you solve any word puzzle challenge.
           </p>
         </div>
 
         {/* Solvers Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {solverCategories.map((solver, index) => (
             <div
               key={solver.title}
-              className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100"
+              className="group relative bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Background Gradient */}
               <div className={`absolute inset-0 bg-gradient-to-br ${solver.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
               
               {/* Content */}
-              <div className="relative p-8">
+              <div className="relative p-6">
                 {/* Icon */}
-                <div className={`w-16 h-16 bg-gradient-to-r ${solver.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                  <solver.icon className="w-8 h-8 text-white" />
+                <div className={`w-12 h-12 bg-gradient-to-r ${solver.gradient} rounded-xl flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                  <solver.icon className="w-6 h-6 text-white" />
                 </div>
 
                 {/* Title and Description */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-teal-700 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-teal-700 transition-colors duration-300">
                   {solver.title}
                 </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                   {solver.description}
                 </p>
 
                 {/* Features */}
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-1 mb-4">
                   {solver.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-gray-500">
-                      <div className="w-1.5 h-1.5 bg-teal-400 rounded-full mr-3 flex-shrink-0" />
+                    <li key={idx} className="flex items-center text-xs text-gray-500">
+                      <div className="w-1 h-1 bg-teal-400 rounded-full mr-2 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
@@ -115,7 +115,7 @@ const SolutionsSection: React.FC = () => {
                 {/* CTA Button */}
                 <a
                   href={solver.href}
-                  className="inline-flex items-center justify-center w-full bg-gray-900 text-white py-3 px-6 rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200 group-hover:bg-gradient-to-r group-hover:from-teal-600 group-hover:to-lime-600"
+                  className="inline-flex items-center justify-center w-full bg-gray-900 text-white py-2 px-4 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200 group-hover:bg-gradient-to-r group-hover:from-teal-600 group-hover:to-lime-600 text-sm"
                 >
                   Try Solver
                   <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" />
@@ -123,16 +123,16 @@ const SolutionsSection: React.FC = () => {
               </div>
 
               {/* Hover Effect Border */}
-              <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-teal-200 transition-colors duration-300" />
+              <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-teal-200 transition-colors duration-300" />
             </div>
           ))}
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-8">
           <a
             href="/all-solvers"
-            className="inline-flex items-center bg-gradient-to-r from-teal-500 to-lime-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:from-teal-600 hover:to-lime-600 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
+            className="inline-flex items-center bg-gradient-to-r from-teal-500 to-lime-500 text-white px-6 py-3 rounded-xl font-semibold text-base hover:from-teal-600 hover:to-lime-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             View All Solvers
             <ArrowRight className="w-5 h-5 ml-2" />
