@@ -53,7 +53,12 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
     { name: 'Quordle Hints', href: '/quordle-hints', category: 'Other Answer Pages' },
     { name: 'LA Times Mini Hints', href: '/la-times-mini-hints', category: 'Other Answer Pages' },
     { name: 'LA Times Crossword Hints', href: '/la-times-crossword-hints', category: 'Other Answer Pages' },
-    { name: 'Word Salad Hints', href: '/word-salad-hints', category: 'Other Answer Pages' }
+    { name: 'Word Salad Hints', href: '/word-salad-hints', category: 'Other Answer Pages' },
+    { name: 'Blogs', href: '/blogs', category: 'Resources' },
+    { name: 'Grammar', href: '/grammar', category: 'Resources' },
+    { name: 'Misspelling', href: '/misspelling', category: 'Resources' },
+    { name: 'Definitions', href: '/definitions', category: 'Resources' },
+    { name: 'Affect vs Effect', href: '/affect-vs-effect', category: 'Resources' }
   ];
 
   useEffect(() => {
