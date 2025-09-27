@@ -66,54 +66,53 @@ const FeaturedSolvers: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-8 bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center bg-gradient-to-r from-teal-100 to-lime-100 text-teal-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
-            <TrendingUp className="w-4 h-4 mr-2" />
+        <div className="text-center mb-6">
+          <div className="inline-flex items-center bg-gradient-to-r from-teal-100 to-lime-100 text-teal-700 px-3 py-1.5 rounded-full text-xs font-medium mb-3">
+            <TrendingUp className="w-3 h-3 mr-1.5" />
             Most Popular
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
             Featured <span className="bg-gradient-to-r from-teal-600 to-lime-600 bg-clip-text text-transparent">Solvers</span>
           </h2>
-          <p className="text-base text-gray-600 max-w-xl mx-auto">
+          <p className="text-sm text-gray-600 max-w-lg mx-auto">
             Our most trusted and frequently used game solvers, designed to help you conquer any word puzzle challenge.
           </p>
         </div>
 
         {/* Flip Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 max-w-2xl mx-auto">
           {featuredSolvers.map((solver, index) => (
             <div
               key={solver.title}
-              className="flip-card h-48"
+              className="flip-card h-40"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flip-card-inner">
                 {/* Front Side */}
-                <div className="flip-card-front bg-white rounded-xl shadow-md border border-gray-100 p-4 flex flex-col items-center justify-center text-center">
+                <div className="flip-card-front bg-white rounded-lg shadow-md border border-gray-100 p-3 flex flex-col items-center justify-center text-center">
                   {/* Large Emoji Icon */}
-                  <div className="text-3xl mb-3 transform group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-2xl mb-2 transform group-hover:scale-110 transition-transform duration-300">
                     {solver.emoji}
                   </div>
                   
                   {/* Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  <h3 className="text-sm font-bold text-gray-900 mb-1">
                     {solver.title}
                   </h3>
                   
                   {/* Stats */}
                   <div className="flex items-center text-green-500">
-                    <TrendingUp className="w-3 h-3 mr-1" />
+                    <TrendingUp className="w-2 h-2 mr-1" />
                     <span className="text-xs font-medium">{solver.stats}</span>
                   </div>
                 </div>
 
                 {/* Back Side */}
-                <div className={`flip-card-back bg-gradient-to-br ${solver.bgGradient} rounded-xl shadow-md border border-gray-100 p-4 flex flex-col justify-between relative overflow-hidden`}>
-                  {/* Background Emoji with Low Opacity */}
                 <div className={`flip-card-back bg-gradient-to-br ${solver.bgGradient} rounded-lg shadow-md border border-gray-100 p-3 flex flex-col justify-between relative overflow-hidden`}>
+                  {/* Background Emoji with Low Opacity */}
                   <div className="absolute top-1 right-1 text-3xl opacity-10 pointer-events-none">
                     {solver.emoji}
                   </div>
@@ -151,19 +150,16 @@ const FeaturedSolvers: React.FC = () => {
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-6">
+        <div className="text-center mt-4">
           <a
             href="/all-solvers"
-            className="inline-flex items-center bg-gradient-to-r from-teal-500 to-lime-500 text-white px-3 py-1.5 rounded-xl font-semibold text-sm hover:from-teal-600 hover:to-lime-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center bg-gradient-to-r from-teal-500 to-lime-500 text-white px-3 py-1.5 rounded-lg font-semibold text-xs hover:from-teal-600 hover:to-lime-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             View All Solvers
             <ArrowRight className="w-3 h-3 ml-1" />
           </a>
         </div>
       </div>
-    )
-    )
-    }
     </section>
   );
 };
