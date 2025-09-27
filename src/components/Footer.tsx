@@ -111,6 +111,8 @@ const FeaturedSolvers: React.FC = () => {
                 </div>
 
                 {/* Back Side */}
+                <div className={`flip-card-back bg-gradient-to-br ${solver.bgGradient} rounded-xl shadow-md border border-gray-100 p-4 flex flex-col justify-between relative overflow-hidden`}>
+                  {/* Background Emoji with Low Opacity */}
                 <div className={`flip-card-back bg-gradient-to-br ${solver.bgGradient} rounded-lg shadow-md border border-gray-100 p-3 flex flex-col justify-between relative overflow-hidden`}>
                   <div className="absolute top-1 right-1 text-3xl opacity-10 pointer-events-none">
                     {solver.emoji}
@@ -159,6 +161,9 @@ const FeaturedSolvers: React.FC = () => {
           </a>
         </div>
       </div>
+    )
+    )
+    }
     </section>
   );
 };
