@@ -1,151 +1,167 @@
 import React from 'react';
-import { Search, Target, Puzzle, Grid3x3 as Grid3X3, BookOpen, Zap, Calendar } from 'lucide-react';
+import { Grid3x3 as Grid3X3, Target, Zap, BookOpen, Shuffle, Hash, ArrowRight, TrendingUp } from 'lucide-react';
 
-interface HeroProps {
-  onSearchOpen: () => void;
-}
-
-const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
-  const popularSolvers = [
-    { 
-      name: 'Wordle', 
-      icon: '🎯', 
+const FeaturedSolvers: React.FC = () => {
+  const featuredSolvers = [
+    {
+      icon: Grid3X3,
+      title: 'Wordle Solver',
+      description: 'Get the perfect word for today\'s Wordle puzzle with our advanced algorithm that analyzes letter patterns.',
       href: '/wordle-solver',
-      color: 'hover:bg-red-50 hover:text-red-600 hover:border-red-200'
+      gradient: 'from-yellow-400 to-orange-500',
+      bgGradient: 'from-yellow-50 to-orange-50',
+      stats: '50K+ daily users',
+      emoji: '🎯'
     },
-    { 
-      name: 'Connections', 
-      icon: '🔗', 
+    {
+      icon: Target,
+      title: 'Connections Hints',
+      description: 'Discover the hidden connections between words with subtle hints and AI-powered pattern recognition.',
       href: '/connections-hints',
-      color: 'hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200'
+      gradient: 'from-blue-400 to-indigo-500',
+      bgGradient: 'from-blue-50 to-indigo-50',
+      stats: '30K+ daily users',
+      emoji: '🔗'
     },
-    { 
-      name: 'Spelling Bee', 
-      icon: '🐝', 
+    {
+      icon: Zap,
+      title: 'Spelling Bee Solver',
+      description: 'Find all possible words and achieve Queen Bee status with our comprehensive word database.',
       href: '/spelling-bee-solver',
-      color: 'hover:bg-yellow-50 hover:text-yellow-600 hover:border-yellow-200'
+      gradient: 'from-amber-400 to-yellow-500',
+      bgGradient: 'from-amber-50 to-yellow-50',
+      stats: '25K+ daily users',
+      emoji: '🐝'
     },
-    { 
-      name: 'Letter Boxed', 
-      icon: '📦', 
-      href: '/letter-boxed-solver',
-      color: 'hover:bg-orange-50 hover:text-orange-600 hover:border-orange-200'
+    {
+      icon: BookOpen,
+      title: 'Crossword Solver',
+      description: 'Solve crossword clues instantly with our extensive database and intelligent matching system.',
+      href: '/crossword-solver',
+      gradient: 'from-purple-400 to-pink-500',
+      bgGradient: 'from-purple-50 to-pink-50',
+      stats: '40K+ daily users',
+      emoji: '📰'
+    },
+    {
+      icon: Shuffle,
+      title: 'Word Unscrambler',
+      description: 'Unscramble any combination of letters to find valid words with our lightning-fast algorithm.',
+      href: '/word-unscrambler',
+      gradient: 'from-green-400 to-teal-500',
+      bgGradient: 'from-green-50 to-teal-50',
+      stats: '35K+ daily users',
+      emoji: '🔀'
+    },
+    {
+      icon: Hash,
+      title: 'Anagram Solver',
+      description: 'Discover all possible anagrams for any word or phrase with our comprehensive anagram engine.',
+      href: '/anagram-solver',
+      gradient: 'from-red-400 to-rose-500',
+      bgGradient: 'from-red-50 to-rose-50',
+      stats: '20K+ daily users',
+      emoji: '🔄'
     }
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-teal-50 pt-20">
-      {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="h-full w-full" style={{
-          backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(20, 184, 166, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(132, 204, 22, 0.1) 0%, transparent 50%)',
-          backgroundSize: '100px 100px'
-        }} />
-      </div>
-
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Main Brand */}
-        <div className="mb-6 animate-fade-in-up">
-          <h1 className="text-2xl md:text-3xl font-bold mb-3 leading-tight">
-            <span className="bg-gradient-to-r from-teal-500 to-teal-600 bg-clip-text text-transparent">
-              NYT
-            </span>
-            <span className="text-gray-900">Solvers</span>
-          </h1>
-          <p className="text-sm md:text-base text-gray-600 max-w-xl mx-auto leading-relaxed mb-4">
-            Expert solutions and daily answers for New York Times games, Wordle, Connections, and more word puzzles
+    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center bg-gradient-to-r from-teal-100 to-lime-100 text-teal-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <TrendingUp className="w-4 h-4 mr-2" />
+            Most Popular
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Featured <span className="bg-gradient-to-r from-teal-600 to-lime-600 bg-clip-text text-transparent">Solvers</span>
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Our most trusted and frequently used game solvers, designed to help you conquer any word puzzle challenge.
           </p>
         </div>
 
-        {/* Search Bar */}
-        <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <div className="max-w-lg mx-auto relative">
-            <div className="relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-              <div className="flex items-center">
-                <div className="pl-3 pr-2 py-2">
-                  <Search className="w-4 h-4 text-gray-400" />
+        {/* Flip Cards Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredSolvers.map((solver, index) => (
+            <div
+              key={solver.title}
+              className="flip-card h-64"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="flip-card-inner">
+                {/* Front Side */}
+                <div className="flip-card-front bg-white rounded-xl shadow-md border border-gray-100 p-6 flex flex-col items-center justify-center text-center">
+                  {/* Large Emoji Icon */}
+                  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                    {solver.emoji}
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    {solver.title}
+                  </h3>
+                  
+                  {/* Stats */}
+                  <div className="flex items-center text-green-500">
+                    <TrendingUp className="w-4 h-4 mr-2" />
+                    <span className="text-sm font-medium">{solver.stats}</span>
+                  </div>
                 </div>
-                <input
-                  type="text"
-                  placeholder="Search for any game solver or daily answers..."
-                  className="flex-1 py-2 pr-2 text-sm placeholder-gray-400 border-none outline-none focus:ring-0"
-                  onClick={onSearchOpen}
-                  readOnly
-                />
-                <button
-                  onClick={onSearchOpen}
-                  className="mr-2 px-3 py-1.5 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-lg font-medium hover:from-teal-600 hover:to-teal-700 transition-all duration-200 flex items-center space-x-1 text-sm"
-                >
-                  <span>Search</span>
-                  <Search className="w-3 h-3" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        {/* Popular Solvers */}
-        <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <p className="text-gray-500 mb-2 font-medium text-sm">Popular solvers:</p>
-          <div className="flex flex-wrap justify-center gap-2">
-            {popularSolvers.map((solver, index) => (
-              <a
-                key={solver.name}
-                href={solver.href}
-                className={`inline-flex items-center space-x-2 px-4 py-2 bg-white border border-gray-200 rounded-full font-medium text-gray-700 transition-all duration-200 transform hover:scale-105 hover:shadow-md ${solver.color} text-sm`}
-                style={{ animationDelay: `${0.5 + index * 0.1}s` }}
-              >
-                <span className="text-base">{solver.icon}</span>
-                <span>{solver.name}</span>
-              </a>
-            ))}
-          </div>
-        </div>
+                {/* Back Side */}
+                <div className={`flip-card-back bg-gradient-to-br ${solver.bgGradient} rounded-xl shadow-md border border-gray-100 p-6 flex flex-col justify-between relative overflow-hidden`}>
+                  {/* Background Emoji with Low Opacity */}
+                  <div className="absolute top-3 right-3 text-6xl opacity-10 pointer-events-none">
+                    {solver.emoji}
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className={`w-10 h-10 bg-gradient-to-r ${solver.gradient} rounded-lg flex items-center justify-center mb-3 shadow-md`}>
+                      <solver.icon className="w-5 h-5 text-white" />
+                    </div>
 
-        {/* Main Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <button
-            onClick={onSearchOpen}
-            className="group px-5 py-2.5 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl font-semibold text-base hover:from-teal-600 hover:to-teal-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2"
-          >
-            <Zap className="w-4 h-4" />
-            <span>Find Solutions</span>
-          </button>
-          
-          <button className="group px-5 py-2.5 bg-white text-gray-700 rounded-xl font-semibold text-base border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2">
-            <Calendar className="w-4 h-4" />
-            <span>Daily Answers</span>
-          </button>
-        </div>
+                    {/* Title */}
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">
+                      {solver.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-gray-600 text-xs leading-relaxed mb-4">
+                      {solver.description}
+                    </p>
+                  </div>
 
-        {/* Quick Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-          {[
-            { number: '25+', label: 'Game Solvers', color: 'from-teal-500 to-teal-600' },
-            { number: '50K+', label: 'Daily Users', color: 'from-lime-500 to-lime-600' },
-            { number: '1M+', label: 'Puzzles Solved', color: 'from-yellow-400 to-yellow-500' },
-            { number: '99.9%', label: 'Accuracy Rate', color: 'from-orange-400 to-orange-500' }
-          ].map((stat, index) => (
-            <div key={stat.label} className="text-center group p-2">
-              <div className={`text-xl md:text-2xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform duration-300`}>
-                {stat.number}
-              </div>
-              <div className="text-gray-600 text-xs md:text-sm">
-                {stat.label}
+                  {/* CTA Button */}
+                  <a
+                    href={solver.href}
+                    className={`inline-flex items-center justify-center w-full bg-gradient-to-r ${solver.gradient} text-white py-2 px-4 rounded-lg font-medium hover:shadow-md transition-all duration-200 transform hover:scale-105 relative z-10 text-sm`}
+                  >
+                    Try {solver.title.replace(' Solver', '').replace(' Hints', '')}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </div>
               </div>
             </div>
           ))}
         </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-teal-300 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-gradient-to-b from-teal-500 to-lime-500 rounded-full mt-2 animate-pulse" />
+        {/* View All Button */}
+        <div className="text-center mt-12">
+          <a
+            href="/all-solvers"
+            className="inline-flex items-center bg-gradient-to-r from-teal-500 to-lime-500 text-white px-6 py-3 rounded-xl font-semibold text-lg hover:from-teal-600 hover:to-lime-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            View All Solvers
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </a>
         </div>
       </div>
     </section>
   );
 };
 
-export default Hero;
+export default FeaturedSolvers;
