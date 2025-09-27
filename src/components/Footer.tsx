@@ -11,7 +11,16 @@ const Footer: React.FC = () => {
         { name: 'Wordle Solver', href: '/wordle-solver' },
         { name: 'Spelling Bee Solver', href: '/spelling-bee-solver' },
         { name: 'Letter Boxed Solver', href: '/letter-boxed-solver' },
-        { name: '3-12 Letter Words', href: '/letter-words' }
+        { name: '3 Letter Words', href: '/3-letter-words' },
+        { name: '4 Letter Words', href: '/4-letter-words' },
+        { name: '5 Letter Words', href: '/5-letter-words' },
+        { name: '6 Letter Words', href: '/6-letter-words' },
+        { name: '7 Letter Words', href: '/7-letter-words' },
+        { name: '8 Letter Words', href: '/8-letter-words' },
+        { name: '9 Letter Words', href: '/9-letter-words' },
+        { name: '10 Letter Words', href: '/10-letter-words' },
+        { name: '11 Letter Words', href: '/11-letter-words' },
+        { name: '12 Letter Words', href: '/12-letter-words' }
       ]
     },
     {
@@ -19,8 +28,13 @@ const Footer: React.FC = () => {
       links: [
         { name: 'Connections Hints', href: '/connections-hints' },
         { name: 'Wordle Hints', href: '/wordle-hints' },
+        { name: 'Spelling Bee Hints', href: '/spelling-bee-hints' },
+        { name: 'Letter Boxed Hints', href: '/letter-boxed-hints' },
         { name: 'Strands Hints', href: '/strands-hints' },
-        { name: 'Crossword Hints', href: '/crossword-hints' }
+        { name: 'Crossword Hints', href: '/crossword-hints' },
+        { name: 'Mini Crossword Hints', href: '/mini-crossword-hints' },
+        { name: 'Connections Sports Hints', href: '/connections-sports-hints' },
+        { name: 'Pips Hints', href: '/pips-hints' }
       ]
     },
     {
@@ -29,15 +43,21 @@ const Footer: React.FC = () => {
         { name: 'Scrabble Word Finder', href: '/scrabble-solver' },
         { name: 'Word Unscrambler', href: '/word-unscrambler' },
         { name: 'Anagram Solver', href: '/anagram-solver' },
-        { name: 'Quordle Solver', href: '/quordle-solver' }
+        { name: 'Quordle Solver', href: '/quordle-solver' },
+        { name: 'Crossword Solver', href: '/crossword-solver' },
+        { name: 'Jumble Solver', href: '/jumble-solver' },
+        { name: 'Words With Friends Solver', href: '/words-with-friends-solver' }
       ]
     },
     {
       title: 'Other Answer Pages',
       links: [
         { name: 'Betweenle Hints', href: '/betweenle-hints' },
-        { name: 'Quordle Hints', href: '/quordle-hints' },
+        { name: 'Conexo Hints', href: '/conexo-hints' },
         { name: 'Blossom Hints', href: '/blossom-hints' },
+        { name: 'Quordle Hints', href: '/quordle-hints' },
+        { name: 'LA Times Mini Hints', href: '/la-times-mini-hints' },
+        { name: 'LA Times Crossword Hints', href: '/la-times-crossword-hints' },
         { name: 'Word Salad Hints', href: '/word-salad-hints' }
       ]
     }

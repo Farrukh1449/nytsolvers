@@ -1,11 +1,7 @@
 import React from 'react';
 import { Search, Target, Puzzle, Grid3x3 as Grid3X3, BookOpen, Zap, Calendar } from 'lucide-react';
 
-interface HeroProps {
-  onSearchOpen: () => void;
-}
-
-const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
+const Hero: React.FC = () => {
   const popularSolvers = [
     { 
       name: 'Wordle', 
@@ -58,7 +54,7 @@ const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
         </div>
 
         {/* Search Bar */}
-        <div className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <div className="mb-12 animate-fade-in-up">
           <div className="max-w-2xl mx-auto relative">
             <div className="relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
               <div className="flex items-center">
@@ -69,11 +65,8 @@ const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
                   type="text"
                   placeholder="Search for any game solver or daily answers..."
                   className="flex-1 py-4 pr-4 text-lg placeholder-gray-400 border-none outline-none focus:ring-0"
-                  onClick={onSearchOpen}
-                  readOnly
                 />
                 <button
-                  onClick={onSearchOpen}
                   className="mr-2 px-6 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl font-medium hover:from-teal-600 hover:to-teal-700 transition-all duration-200 flex items-center space-x-2"
                 >
                   <span>Search</span>
@@ -85,7 +78,7 @@ const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
         </div>
 
         {/* Popular Solvers */}
-        <div className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <div className="mb-12 animate-fade-in-up">
           <p className="text-gray-500 mb-6 font-medium">Popular solvers:</p>
           <div className="flex flex-wrap justify-center gap-4">
             {popularSolvers.map((solver, index) => (
@@ -93,7 +86,6 @@ const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
                 key={solver.name}
                 href={solver.href}
                 className={`inline-flex items-center space-x-3 px-6 py-3 bg-white border border-gray-200 rounded-full font-medium text-gray-700 transition-all duration-200 transform hover:scale-105 hover:shadow-md ${solver.color}`}
-                style={{ animationDelay: `${0.5 + index * 0.1}s` }}
               >
                 <solver.icon className="w-5 h-5" />
                 <span>{solver.name}</span>
@@ -103,23 +95,26 @@ const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
         </div>
 
         {/* Main Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <button
-            onClick={onSearchOpen}
+        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16 animate-fade-in-up">
+          <a
+            href="/all-solvers"
             className="group px-8 py-4 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-2xl font-semibold text-lg hover:from-teal-600 hover:to-teal-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center space-x-3"
           >
             <Zap className="w-5 h-5" />
             <span>Find Solutions</span>
-          </button>
+          </a>
           
-          <button className="group px-8 py-4 bg-white text-gray-700 rounded-2xl font-semibold text-lg border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-3">
+          <a
+            href="/connections-hints"
+            className="group px-8 py-4 bg-white text-gray-700 rounded-2xl font-semibold text-lg border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-3"
+          >
             <Calendar className="w-5 h-5" />
             <span>Daily Answers</span>
-          </button>
+          </a>
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto animate-fade-in-up">
           {[
             { number: '25+', label: 'Game Solvers', color: 'from-teal-500 to-teal-600' },
             { number: '50K+', label: 'Daily Users', color: 'from-lime-500 to-lime-600' },
@@ -127,7 +122,7 @@ const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
             { number: '99.9%', label: 'Accuracy Rate', color: 'from-orange-400 to-orange-500' }
           ].map((stat, index) => (
             <div key={stat.label} className="text-center group">
-              <div className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
                 {stat.number}
               </div>
               <div className="text-gray-600 text-sm md:text-base">

@@ -54,6 +54,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchOpen }) => {
         { name: 'Connections Hints', href: '/connections-hints' },
         { name: 'Wordle Hints', href: '/wordle-hints' },
         { name: 'Spelling Bee Hints', href: '/spelling-bee-hints' },
+        { name: 'Letter Boxed Hints', href: '/letter-boxed-hints' },
         { name: 'Strands Hints', href: '/strands-hints' },
         { name: 'Crossword Hints', href: '/crossword-hints' },
         { name: 'Mini Crossword Hints', href: '/mini-crossword-hints' },

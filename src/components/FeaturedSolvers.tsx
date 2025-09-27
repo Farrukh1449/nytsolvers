@@ -4,24 +4,24 @@ import { Grid3x3 as Grid3X3, Target, Zap, BookOpen, Shuffle, Hash, ArrowRight, T
 const FeaturedSolvers: React.FC = () => {
   const featuredSolvers = [
     {
-      icon: Grid3X3,
+      icon: Target,
       title: 'Wordle Solver',
       description: 'Get the perfect word for today\'s Wordle puzzle with our advanced algorithm that analyzes letter patterns.',
       href: '/wordle-solver',
       gradient: 'from-yellow-400 to-orange-500',
       bgGradient: 'from-yellow-50 to-orange-50',
       stats: '50K+ daily users',
-      emoji: '🎯'
+      iconColor: 'text-yellow-600'
     },
     {
-      icon: Target,
+      icon: Grid3X3,
       title: 'Connections Hints',
       description: 'Discover the hidden connections between words with subtle hints and AI-powered pattern recognition.',
       href: '/connections-hints',
       gradient: 'from-blue-400 to-indigo-500',
       bgGradient: 'from-blue-50 to-indigo-50',
       stats: '30K+ daily users',
-      emoji: '🔗'
+      iconColor: 'text-blue-600'
     },
     {
       icon: Zap,
@@ -31,7 +31,7 @@ const FeaturedSolvers: React.FC = () => {
       gradient: 'from-amber-400 to-yellow-500',
       bgGradient: 'from-amber-50 to-yellow-50',
       stats: '25K+ daily users',
-      emoji: '🐝'
+      iconColor: 'text-amber-600'
     },
     {
       icon: BookOpen,
@@ -41,27 +41,27 @@ const FeaturedSolvers: React.FC = () => {
       gradient: 'from-purple-400 to-pink-500',
       bgGradient: 'from-purple-50 to-pink-50',
       stats: '40K+ daily users',
-      emoji: '📰'
+      iconColor: 'text-purple-600'
     },
     {
-      icon: Shuffle,
+      icon: Hash,
       title: 'Word Unscrambler',
       description: 'Unscramble any combination of letters to find valid words with our lightning-fast algorithm.',
       href: '/word-unscrambler',
       gradient: 'from-green-400 to-teal-500',
       bgGradient: 'from-green-50 to-teal-50',
       stats: '35K+ daily users',
-      emoji: '🔀'
+      iconColor: 'text-green-600'
     },
     {
-      icon: Hash,
+      icon: Shuffle,
       title: 'Anagram Solver',
       description: 'Discover all possible anagrams for any word or phrase with our comprehensive anagram engine.',
       href: '/anagram-solver',
       gradient: 'from-red-400 to-rose-500',
       bgGradient: 'from-red-50 to-rose-50',
       stats: '20K+ daily users',
-      emoji: '🔄'
+      iconColor: 'text-red-600'
     }
   ];
 
@@ -93,9 +93,9 @@ const FeaturedSolvers: React.FC = () => {
               <div className="flip-card-inner">
                 {/* Front Side */}
                 <div className="flip-card-front bg-white rounded-2xl shadow-lg border border-gray-100 p-8 flex flex-col items-center justify-center text-center">
-                  {/* Large Emoji Icon */}
-                  <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                    {solver.emoji}
+                  {/* Large SVG Icon */}
+                  <div className={`w-20 h-20 ${solver.iconColor} mb-6 transform group-hover:scale-110 transition-transform duration-300`}>
+                    <solver.icon className="w-full h-full" />
                   </div>
                   
                   {/* Title */}
@@ -112,9 +112,9 @@ const FeaturedSolvers: React.FC = () => {
 
                 {/* Back Side */}
                 <div className={`flip-card-back bg-gradient-to-br ${solver.bgGradient} rounded-2xl shadow-lg border border-gray-100 p-8 flex flex-col justify-between relative overflow-hidden`}>
-                  {/* Background Emoji with Low Opacity */}
-                  <div className="absolute top-4 right-4 text-8xl opacity-10 pointer-events-none">
-                    {solver.emoji}
+                  {/* Background Icon with Low Opacity */}
+                  <div className="absolute top-4 right-4 w-20 h-20 opacity-10 pointer-events-none text-gray-400">
+                    <solver.icon className="w-full h-full" />
                   </div>
                   
                   {/* Content */}

@@ -19,6 +19,8 @@ import CrosswordSolver from './pages/CrosswordSolver';
 import JumbleSolver from './pages/JumbleSolver';
 import WordsWithFriendsSolver from './pages/WordsWithFriendsSolver';
 import QuordleSolver from './pages/QuordleSolver';
+import LetterBoxedHints from './pages/LetterBoxedHints';
+import SpellingBeeHints from './pages/SpellingBeeHints';
 
 // Letter word solvers
 import ThreeLetterWords from './pages/ThreeLetterWords';
@@ -108,6 +110,8 @@ function App() {
       case '/crossword-hints': return 'crossword-hints';
       case '/mini-crossword-hints': return 'mini-crossword-hints';
       case '/quordle-hints': return 'quordle-hints';
+      case '/spelling-bee-hints': return 'spelling-bee-hints';
+      case '/letter-boxed-hints': return 'letter-boxed-hints';
       case '/blossom-hints': return 'blossom-hints';
       case '/conexo-hints': return 'conexo-hints';
       case '/connections-sports-hints': return 'connections-sports-hints';
@@ -149,6 +153,8 @@ function App() {
       case 'crossword-hints': return <CrosswordHints />;
       case 'mini-crossword-hints': return <MiniCrosswordHints />;
       case 'quordle-hints': return <QuordleHints />;
+      case 'spelling-bee-hints': return <SpellingBeeHints />;
+      case 'letter-boxed-hints': return <LetterBoxedHints />;
       case 'blossom-hints': return <BlossomHints />;
       case 'conexo-hints': return <ConexoHints />;
       case 'connections-sports-hints': return <ConnectionsSportsHints />;
