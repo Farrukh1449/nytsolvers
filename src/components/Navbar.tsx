@@ -59,7 +59,6 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchOpen }) => {
         { name: 'Crossword Hints', href: '/crossword-hints' },
         { name: 'Mini Crossword Hints', href: '/mini-crossword-hints' },
         { name: 'Connections: Sports Edition Hints', href: '/connections-sports-hints' },
-        { name: 'Letter Boxed Hints', href: '/letter-boxed-hints' },
         { name: 'Pips Hints', href: '/pips-hints' }
       ]
     },
@@ -136,9 +135,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchOpen }) => {
                         >
                           {item.name}
                           {item.subItems && (
-                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
+                            <ChevronDown className="w-4 h-4 ml-2 rotate-[-90deg]" />
                           )}
                         </a>
                         

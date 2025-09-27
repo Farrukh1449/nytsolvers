@@ -50,6 +50,12 @@ import LATimesCrosswordHints from './pages/LATimesCrosswordHints';
 import WordSaladHints from './pages/WordSaladHints';
 import BetweenleHints from './pages/BetweenleHints';
 
+// Resource pages
+import Blogs from './pages/Blogs';
+import Grammar from './pages/Grammar';
+import Misspelling from './pages/Misspelling';
+import Definitions from './pages/Definitions';
+import AffectVsEffect from './pages/AffectVsEffect';
 function App() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
@@ -120,6 +126,11 @@ function App() {
       case '/la-times-crossword-hints': return 'la-times-crossword-hints';
       case '/word-salad-hints': return 'word-salad-hints';
       case '/betweenle-hints': return 'betweenle-hints';
+      case '/blogs': return 'blogs';
+      case '/grammar': return 'grammar';
+      case '/misspelling': return 'misspelling';
+      case '/definitions': return 'definitions';
+      case '/affect-vs-effect': return 'affect-vs-effect';
       default: return 'home';
     }
   };
@@ -163,13 +174,18 @@ function App() {
       case 'la-times-crossword-hints': return <LATimesCrosswordHints />;
       case 'word-salad-hints': return <WordSaladHints />;
       case 'betweenle-hints': return <BetweenleHints />;
+      case 'blogs': return <Blogs />;
+      case 'grammar': return <Grammar />;
+      case 'misspelling': return <Misspelling />;
+      case 'definitions': return <Definitions />;
+      case 'affect-vs-effect': return <AffectVsEffect />;
       default:
         return (
           <>
             <Hero />
             <FeaturedSolvers />
-            <SolutionsSection />
             <AnswersSection />
+            <SolutionsSection />
           </>
         );
     }

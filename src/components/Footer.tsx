@@ -60,6 +60,15 @@ const Footer: React.FC = () => {
         { name: 'LA Times Crossword Hints', href: '/la-times-crossword-hints' },
         { name: 'Word Salad Hints', href: '/word-salad-hints' }
       ]
+    },
+    {
+      title: 'Resources',
+      links: [
+        { name: 'Blogs', href: '/blogs' },
+        { name: 'Grammar', href: '/grammar' },
+        { name: 'Misspelling', href: '/misspelling' },
+        { name: 'Definitions', href: '/definitions' }
+      ]
     }
   ];
 
