@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Grid3x3 as Grid3X3, Target, Zap, BookOpen, Shuffle, Hash, Gamepad2, Trophy, Star, Filter } from 'lucide-react';
+import { Search, Grid3x3 as Grid3X3, Target, Zap, BookOpen, Shuffle, Hash, Gamepad2, Trophy, Star, Filter, Users, RotateCcw, Puzzle, Music, Grid2x2, Mountain, Cookie, Image, Globe, Sparkles } from 'lucide-react';
 
 const AllSolvers: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -12,7 +12,7 @@ const AllSolvers: React.FC = () => {
       href: '/scrabble-solver',
       description: 'Find the highest scoring words for Scrabble',
       category: 'Word Games',
-      icon: '🎯',
+      icon: Target,
       color: 'from-green-400 to-emerald-500',
       bgColor: 'from-green-50 to-emerald-50'
     },
@@ -21,7 +21,7 @@ const AllSolvers: React.FC = () => {
       href: '/words-with-friends-solver',
       description: 'Dominate Words With Friends with optimal plays',
       category: 'Word Games',
-      icon: '👥',
+      icon: Users,
       color: 'from-blue-400 to-cyan-500',
       bgColor: 'from-blue-50 to-cyan-50'
     },
@@ -30,7 +30,7 @@ const AllSolvers: React.FC = () => {
       href: '/word-unscrambler',
       description: 'Unscramble letters to find valid words',
       category: 'Word Games',
-      icon: '🔀',
+      icon: Shuffle,
       color: 'from-purple-400 to-violet-500',
       bgColor: 'from-purple-50 to-violet-50'
     },
@@ -39,7 +39,7 @@ const AllSolvers: React.FC = () => {
       href: '/anagram-solver',
       description: 'Discover all possible anagrams for any word',
       category: 'Word Games',
-      icon: '🔄',
+      icon: RotateCcw,
       color: 'from-pink-400 to-rose-500',
       bgColor: 'from-pink-50 to-rose-50'
     },
@@ -48,7 +48,7 @@ const AllSolvers: React.FC = () => {
       href: '/crossword-solver',
       description: 'Solve crossword clues with our extensive database',
       category: 'Puzzles',
-      icon: '📰',
+      icon: BookOpen,
       color: 'from-indigo-400 to-purple-500',
       bgColor: 'from-indigo-50 to-purple-50'
     },
@@ -57,7 +57,7 @@ const AllSolvers: React.FC = () => {
       href: '/jumble-solver',
       description: 'Solve daily jumble puzzles instantly',
       category: 'Puzzles',
-      icon: '🧩',
+      icon: Puzzle,
       color: 'from-yellow-400 to-orange-500',
       bgColor: 'from-yellow-50 to-orange-50'
     },
@@ -66,7 +66,7 @@ const AllSolvers: React.FC = () => {
       href: '/rhyme-finder',
       description: 'Find perfect rhymes for poetry and songwriting',
       category: 'Word Games',
-      icon: '🎵',
+      icon: Music,
       color: 'from-teal-400 to-cyan-500',
       bgColor: 'from-teal-50 to-cyan-50'
     },
@@ -76,7 +76,7 @@ const AllSolvers: React.FC = () => {
       href: '/quordle-solver',
       description: 'Solve four Wordle puzzles simultaneously',
       category: 'Multi-Word',
-      icon: '4️⃣',
+      icon: Grid2x2,
       color: 'from-red-400 to-pink-500',
       bgColor: 'from-red-50 to-pink-50'
     },
@@ -85,7 +85,7 @@ const AllSolvers: React.FC = () => {
       href: '/octordle-solver',
       description: 'Master eight Wordle puzzles at once',
       category: 'Multi-Word',
-      icon: '8️⃣',
+      icon: Grid3X3,
       color: 'from-orange-400 to-red-500',
       bgColor: 'from-orange-50 to-red-50'
     },
@@ -95,7 +95,7 @@ const AllSolvers: React.FC = () => {
       href: '/wordscapes-solver',
       description: 'Complete Wordscapes levels with ease',
       category: 'Mobile Games',
-      icon: '🌄',
+      icon: Mountain,
       color: 'from-green-400 to-teal-500',
       bgColor: 'from-green-50 to-teal-50'
     },
@@ -104,7 +104,7 @@ const AllSolvers: React.FC = () => {
       href: '/word-cookies-solver',
       description: 'Find all words in Word Cookies puzzles',
       category: 'Mobile Games',
-      icon: '🍪',
+      icon: Cookie,
       color: 'from-amber-400 to-yellow-500',
       bgColor: 'from-amber-50 to-yellow-50'
     },
@@ -113,7 +113,7 @@ const AllSolvers: React.FC = () => {
       href: '/word-chums-solver',
       description: 'Get the best plays in Word Chums',
       category: 'Mobile Games',
-      icon: '🎮',
+      icon: Gamepad2,
       color: 'from-lime-400 to-green-500',
       bgColor: 'from-lime-50 to-green-50'
     },
@@ -122,7 +122,7 @@ const AllSolvers: React.FC = () => {
       href: '/4-pics-1-word',
       description: 'Find answers for 4 Pics 1 Word puzzles',
       category: 'Mobile Games',
-      icon: '🖼️',
+      icon: Image,
       color: 'from-violet-400 to-purple-500',
       bgColor: 'from-violet-50 to-purple-50'
     },
@@ -132,7 +132,7 @@ const AllSolvers: React.FC = () => {
       href: '/wordfeud-helper',
       description: 'Dominate Wordfeud with strategic plays',
       category: 'International',
-      icon: '🌍',
+      icon: Globe,
       color: 'from-cyan-400 to-blue-500',
       bgColor: 'from-cyan-50 to-blue-50'
     },
@@ -141,7 +141,7 @@ const AllSolvers: React.FC = () => {
       href: '/words-of-wonder-solver',
       description: 'Solve Words of Wonder challenges',
       category: 'International',
-      icon: '✨',
+      icon: Sparkles,
       color: 'from-rose-400 to-pink-500',
       bgColor: 'from-rose-50 to-pink-50'
     }
@@ -232,7 +232,7 @@ const AllSolvers: React.FC = () => {
                 {/* Icon and Category */}
                 <div className="flex items-center justify-between mb-6">
                   <div className={`w-16 h-16 bg-gradient-to-r ${solver.color} rounded-2xl flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    {solver.icon}
+                    <solver.icon className="w-8 h-8 text-white" />
                   </div>
                   <span className="text-xs font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
                     {solver.category}

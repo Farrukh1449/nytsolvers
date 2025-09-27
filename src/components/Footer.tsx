@@ -1,26 +1,52 @@
 import React from 'react';
+import React, { useState } from 'react';
 import { Grid3x3 as Grid3X3, Target, BookOpen, Twitter, Facebook, Instagram, Youtube, Mail, ExternalLink } from 'lucide-react';
 
+interface FooterLink {
+  name: string;
+  href: string;
+  subItems?: FooterLink[];
+}
+
+interface FooterSection {
+  title: string;
+  links: FooterLink[];
+}
+
 const Footer: React.FC = () => {
+  const [expandedSections, setExpandedSections] = useState<string[]>([]);
   const currentYear = new Date().getFullYear();
 
-  const footerSections = [
+  const toggleSection = (sectionTitle: string) => {
+    setExpandedSections(prev => 
+      prev.includes(sectionTitle) 
+        ? prev.filter(title => title !== sectionTitle)
+        : [...prev, sectionTitle]
+    );
+  };
+
+  const footerSections: FooterSection[] = [
     {
       title: 'NYT Solvers',
       links: [
-        { name: 'Wordle Solver', href: '/wordle-solver' },
+        { 
+          name: 'Wordle Solver', 
+          href: '/wordle-solver',
+          subItems: [
+            { name: '3 Letter Words', href: '/3-letter-words' },
+            { name: '4 Letter Words', href: '/4-letter-words' },
+            { name: '5 Letter Words', href: '/5-letter-words' },
+            { name: '6 Letter Words', href: '/6-letter-words' },
+            { name: '7 Letter Words', href: '/7-letter-words' },
+            { name: '8 Letter Words', href: '/8-letter-words' },
+            { name: '9 Letter Words', href: '/9-letter-words' },
+            { name: '10 Letter Words', href: '/10-letter-words' },
+            { name: '11 Letter Words', href: '/11-letter-words' },
+            { name: '12 Letter Words', href: '/12-letter-words' }
+          ]
+        },
         { name: 'Spelling Bee Solver', href: '/spelling-bee-solver' },
         { name: 'Letter Boxed Solver', href: '/letter-boxed-solver' },
-        { name: '3 Letter Words', href: '/3-letter-words' },
-        { name: '4 Letter Words', href: '/4-letter-words' },
-        { name: '5 Letter Words', href: '/5-letter-words' },
-        { name: '6 Letter Words', href: '/6-letter-words' },
-        { name: '7 Letter Words', href: '/7-letter-words' },
-        { name: '8 Letter Words', href: '/8-letter-words' },
-        { name: '9 Letter Words', href: '/9-letter-words' },
-        { name: '10 Letter Words', href: '/10-letter-words' },
-        { name: '11 Letter Words', href: '/11-letter-words' },
-        { name: '12 Letter Words', href: '/12-letter-words' }
       ]
     },
     {
@@ -167,14 +193,41 @@ const Footer: React.FC = () => {
               <h4 className="font-semibold mb-4 text-white">{section.title}</h4>
               <ul className="space-y-3">
                 {section.links.map((link) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className="text-gray-400 hover:text-teal-400 transition-colors duration-200 text-sm flex items-center group"
-                    >
-                      {link.name}
-                      <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-200" />
-                    </a>
+                  <li key={link.name} className="relative">
+                    {link.subItems ? (
+                      <div>
+                        <button
+                          onClick={() => toggleSection(link.name)}
+                          className="text-gray-400 hover:text-teal-400 transition-colors duration-200 text-sm flex items-center group w-full text-left"
+                        >
+                          {link.name}
+                          <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-200" />
+                        </button>
+                        {expandedSections.includes(link.name) && (
+                          <ul className="mt-2 ml-4 space-y-2">
+                            {link.subItems.map((subItem) => (
+                              <li key={subItem.name}>
+                                <a
+                                  href={subItem.href}
+                                  className="text-gray-500 hover:text-teal-400 transition-colors duration-200 text-xs flex items-center group"
+                                >
+                                  {subItem.name}
+                                  <ExternalLink className="w-2 h-2 ml-1 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-200" />
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="text-gray-400 hover:text-teal-400 transition-colors duration-200 text-sm flex items-center group"
+                      >
+                        {link.name}
+                        <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-200" />
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
