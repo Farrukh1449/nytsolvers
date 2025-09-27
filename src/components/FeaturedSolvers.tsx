@@ -74,63 +74,63 @@ const FeaturedSolvers: React.FC = () => {
             <TrendingUp className="w-4 h-4 mr-2" />
             Most Popular
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Featured <span className="bg-gradient-to-r from-teal-600 to-lime-600 bg-clip-text text-transparent">Solvers</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Our most trusted and frequently used game solvers, designed to help you conquer any word puzzle challenge.
           </p>
         </div>
 
         {/* Flip Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredSolvers.map((solver, index) => (
             <div
               key={solver.title}
-              className="flip-card h-64"
+              className="flip-card h-80"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flip-card-inner">
                 {/* Front Side */}
-                <div className="flip-card-front bg-white rounded-xl shadow-md border border-gray-100 p-6 flex flex-col items-center justify-center text-center">
+                <div className="flip-card-front bg-white rounded-xl shadow-md border border-gray-100 p-8 flex flex-col items-center justify-center text-center">
                   {/* Large Emoji Icon */}
-                  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                     {solver.emoji}
                   </div>
                   
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {solver.title}
                   </h3>
                   
                   {/* Stats */}
                   <div className="flex items-center text-green-500">
-                    <TrendingUp className="w-4 h-4 mr-1" />
-                    <span className="text-xs font-medium">{solver.stats}</span>
+                    <TrendingUp className="w-5 h-5 mr-2" />
+                    <span className="text-sm font-medium">{solver.stats}</span>
                   </div>
                 </div>
 
                 {/* Back Side */}
-                <div className={`flip-card-back bg-gradient-to-br ${solver.bgGradient} rounded-xl shadow-md border border-gray-100 p-6 flex flex-col justify-between relative overflow-hidden`}>
+                <div className={`flip-card-back bg-gradient-to-br ${solver.bgGradient} rounded-xl shadow-md border border-gray-100 p-8 flex flex-col justify-between relative overflow-hidden`}>
                   {/* Background Emoji with Low Opacity */}
-                  <div className="absolute top-2 right-2 text-6xl opacity-10 pointer-events-none">
+                  <div className="absolute top-4 right-4 text-8xl opacity-10 pointer-events-none">
                     {solver.emoji}
                   </div>
                   
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Icon */}
-                    <div className={`w-10 h-10 bg-gradient-to-r ${solver.gradient} rounded-lg flex items-center justify-center mb-3 shadow-md`}>
-                      <solver.icon className="w-5 h-5 text-white" />
+                    <div className={`w-12 h-12 bg-gradient-to-r ${solver.gradient} rounded-lg flex items-center justify-center mb-4 shadow-md`}>
+                      <solver.icon className="w-6 h-6 text-white" />
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
                       {solver.title}
                     </h3>
                     
                     {/* Description */}
-                    <p className="text-gray-600 text-xs leading-relaxed mb-4">
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
                       {solver.description}
                     </p>
                   </div>
@@ -138,10 +138,10 @@ const FeaturedSolvers: React.FC = () => {
                   {/* CTA Button */}
                   <a
                     href={solver.href}
-                    className={`inline-flex items-center justify-center w-full bg-gradient-to-r ${solver.gradient} text-white py-2 px-4 rounded-lg font-medium hover:shadow-md transition-all duration-200 transform hover:scale-105 relative z-10 text-sm`}
+                    className={`inline-flex items-center justify-center w-full bg-gradient-to-r ${solver.gradient} text-white py-3 px-6 rounded-lg font-medium hover:shadow-md transition-all duration-200 transform hover:scale-105 relative z-10 text-base`}
                   >
                     Try {solver.title.replace(' Solver', '').replace(' Hints', '')}
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    <ArrowRight className="w-5 h-5 ml-2" />
                   </a>
                 </div>
               </div>
@@ -150,13 +150,13 @@ const FeaturedSolvers: React.FC = () => {
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-8">
+        <div className="text-center mt-12">
           <a
             href="/all-solvers"
-            className="inline-flex items-center bg-gradient-to-r from-teal-500 to-lime-500 text-white px-6 py-3 rounded-xl font-semibold text-base hover:from-teal-600 hover:to-lime-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center bg-gradient-to-r from-teal-500 to-lime-500 text-white px-8 py-4 rounded-xl font-semibold text-xl hover:from-teal-600 hover:to-lime-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             View All Solvers
-            <ArrowRight className="w-5 h-5 ml-2" />
+            <ArrowRight className="w-6 h-6 ml-3" />
           </a>
         </div>
       </div>
