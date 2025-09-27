@@ -9,25 +9,25 @@ const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
   const popularSolvers = [
     { 
       name: 'Wordle', 
-      icon: '🎯', 
+      icon: Target, 
       href: '/wordle-solver',
       color: 'hover:bg-red-50 hover:text-red-600 hover:border-red-200'
     },
     { 
       name: 'Connections', 
-      icon: '🔗', 
+      icon: Grid3X3, 
       href: '/connections-hints',
       color: 'hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200'
     },
     { 
       name: 'Spelling Bee', 
-      icon: '🐝', 
+      icon: Zap, 
       href: '/spelling-bee-solver',
       color: 'hover:bg-yellow-50 hover:text-yellow-600 hover:border-yellow-200'
     },
     { 
       name: 'Letter Boxed', 
-      icon: '📦', 
+      icon: BookOpen, 
       href: '/letter-boxed-solver',
       color: 'hover:bg-orange-50 hover:text-orange-600 hover:border-orange-200'
     }
@@ -95,7 +95,7 @@ const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
                 className={`inline-flex items-center space-x-3 px-6 py-3 bg-white border border-gray-200 rounded-full font-medium text-gray-700 transition-all duration-200 transform hover:scale-105 hover:shadow-md ${solver.color}`}
                 style={{ animationDelay: `${0.5 + index * 0.1}s` }}
               >
-                <span className="text-lg">{solver.icon}</span>
+                <solver.icon className="w-5 h-5" />
                 <span>{solver.name}</span>
               </a>
             ))}
@@ -139,11 +139,6 @@ const Hero: React.FC<HeroProps> = ({ onSearchOpen }) => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-teal-300 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-gradient-to-b from-teal-500 to-lime-500 rounded-full mt-2 animate-pulse" />
-        </div>
-      </div>
     </section>
   );
 };
