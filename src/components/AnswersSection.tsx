@@ -83,58 +83,58 @@ const AnswersSection: React.FC = () => {
             <Calendar className="w-4 h-4 mr-2" />
             Daily Answers
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Today's <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Puzzle Hints</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Get daily hints and answers for all your favorite New York Times puzzles, updated fresh every day.
           </p>
         </div>
 
         {/* Answer Pages Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {answerPages.map((page, index) => (
             <div
               key={page.title}
-              className="group relative bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100 min-h-[280px]"
+              className="group relative bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100 min-h-[240px]"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Background Gradient */}
               <div className={`absolute inset-0 bg-gradient-to-br ${page.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
               
               {/* Content */}
-              <div className="relative p-8">
+              <div className="relative p-6">
                 {/* Header with Icon and Difficulty */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${page.gradient} rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                    <page.icon className="w-8 h-8 text-white" />
+                <div className="flex items-center justify-between mb-4">
+                  <div className={`w-12 h-12 bg-gradient-to-r ${page.gradient} rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                    <page.icon className="w-6 h-6 text-white" />
                   </div>
-                  <span className={`px-4 py-2 rounded-full text-sm font-medium ${getDifficultyColor(page.difficulty)}`}>
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${getDifficultyColor(page.difficulty)}`}>
                     {page.difficulty}
                   </span>
                 </div>
 
                 {/* Title and Description */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors duration-300">
                   {page.title}
                 </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed text-base">
+                <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                   {page.description}
                 </p>
 
                 {/* Update Time */}
-                <div className="flex items-center text-sm text-gray-500 mb-6">
-                  <Clock className="w-5 h-5 mr-2" />
+                <div className="flex items-center text-xs text-gray-500 mb-4">
+                  <Clock className="w-4 h-4 mr-2" />
                   {page.updateTime}
                 </div>
 
                 {/* CTA Button */}
                 <a
                   href={page.href}
-                  className="inline-flex items-center justify-center w-full bg-gray-900 text-white py-3 px-6 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 text-base"
+                  className="inline-flex items-center justify-center w-full bg-gray-900 text-white py-2 px-4 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 text-sm"
                 >
                   Get Today's Hints
-                  <ArrowRight className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" />
+                  <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" />
                 </a>
               </div>
 
@@ -148,10 +148,10 @@ const AnswersSection: React.FC = () => {
         <div className="text-center mt-12">
           <a
             href="/all-answers"
-            className="inline-flex items-center bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-xl font-semibold text-xl hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             View All Answer Pages
-            <ArrowRight className="w-6 h-6 ml-3" />
+            <ArrowRight className="w-5 h-5 ml-2" />
           </a>
         </div>
       </div>
