@@ -409,28 +409,7 @@ const ConnectionsHints: React.FC = () => {
           </h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h4 className="font-semibold text-gray-800 mb-2">General Strategy</h4>
               <ul className="space-y-1 text-sm text-gray-600">
                 <li>• Start with the easiest category (yellow)</li>
                 <li>• Look for obvious connections first</li>
-                <li>• Group similar words together</li>
-                <li>• Use process of elimination</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-gray-800 mb-2">Common Categories</h4>
-              <ul className="space-y-1 text-sm text-gray-600">
-                <li>• Colors, animals, foods</li>
-                <li>• Word patterns (endings, prefixes)</li>
-                <li>• Related concepts or themes</li>
-                <li>• Parts of something larger</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 export default ConnectionsHints;
