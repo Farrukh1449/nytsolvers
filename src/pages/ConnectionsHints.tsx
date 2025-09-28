@@ -385,7 +385,5 @@ const ConnectionsHints: React.FC = () => {
         </div>
       </div>
     </div>
-  );
-};
 
 export default ConnectionsHints;
