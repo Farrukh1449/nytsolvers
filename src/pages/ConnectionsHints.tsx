@@ -5,15 +5,8 @@ const ConnectionsHints: React.FC = () => {
   const [showHints, setShowHints] = useState([false, false, false, false]);
   const [showAnswers, setShowAnswers] = useState(false);
 
-  const todayDate = new Date().toLocaleDateString('en-US', { 
-    weekday: 'long', 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
-  });
-
   const puzzleData = {
-    date: 'Saturday, September 27, 2025',
+    date: 'Sat, Sep 27',
     number: 542,
     categories: [
       {
@@ -56,23 +49,29 @@ const ConnectionsHints: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
-            NYT Connections Hints
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Connections <span className="text-blue-600">Hints</span>
+        {/* Hero Section */}
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Connections NYT: Hints For Today's Puzzle, {puzzleData.date}
           </h1>
-          <div className="flex items-center justify-center space-x-4 text-gray-600">
-            <div className="flex items-center">
-              <Calendar className="w-5 h-5 mr-2" />
-              {puzzleData.date}
-            </div>
-            <div className="flex items-center">
-              <Clock className="w-5 h-5 mr-2" />
-              Puzzle #{puzzleData.number}
-            </div>
+          
+          {/* Intro Text */}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-700 mb-4">
+              Love the NYT Wordle hack? You can find daily NYT Connections hints and answers every day on our website.
+            </p>
+            <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200">
+              Play Today's NYT Game
+            </button>
+          </div>
+          
+          {/* Spoiler Alert */}
+          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-700">
+              <strong>Psst... Connections Spoiler Ahead!</strong>
+            </p>
+            <p className="text-gray-600 text-sm mt-1">
+              We're the ANSWER POLICE! If you don't want to know the hints to today's NYT Connections puzzle, please stop reading now. Otherwise, please continue below.
+            </p>
           </div>
         </div>
 
