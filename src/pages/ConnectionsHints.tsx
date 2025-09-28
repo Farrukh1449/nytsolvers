@@ -189,51 +189,6 @@ const ConnectionsHints: React.FC = () => {
         </div>
       </div>
 
-      {/* Content Section */}
-      <div className="bg-gray-50 py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* You Might Need Help Section */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              You Might Need Help in Other <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">NYT Games</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Explore hints and solutions for other popular New York Times puzzle games
-            </p>
-          </div>
-
-          {/* Related Games Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {relatedGames.map((game, index) => (
-              <div
-                key={game.title}
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="p-6">
-                  {/* Icon */}
-                  <div className={`w-12 h-12 ${game.bgColor} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <game.icon className="w-6 h-6 text-gray-700" />
-                  </div>
-
-                  {/* Title and Description */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                    {game.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    {game.description}
-                  </p>
-
-                  {/* CTA */}
-                  <div className="flex items-center text-blue-600 group-hover:text-blue-700 font-medium text-sm">
-                    Get Hints
-                    <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-200" />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
           {/* Daily Games Hints & Answers Section */}
           <div className="text-center mb-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Daily Games Hints & Answers:</h3>
