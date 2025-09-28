@@ -282,7 +282,7 @@ const ConnectionsHints: React.FC = () => {
             
             <div className="space-y-4 text-gray-600">
               <p>
-                Looking to sharpen you <a href="/wordle-hints" className="text-blue-600 hover:underline">Wordle skills</a>? Don't forget to check out <a href="/wordle-hints" className=\"text-blue-600 hover:underline">today's Wordle answer</a>. We've got a whole page dedicated to it, with daily solutions. And a lot more. For buzzy players, you'll find \"What is today's Spelling Bee pangram?" over on our <a href="/spelling-bee-hints" className=\"text-blue-600 hover:underline">NYT Spelling Bee Answers</a> segment. We have scoured our database for pangram solutions so you can uphold The Queen Bee! status and keep your streak streamlined.
+                Looking to sharpen you Wordle skills? Don't forget to check out today's Wordle answer. We've got a whole page dedicated to it, with daily solutions. And a lot more. For buzzy players, you'll find "What is today's Spelling Bee pangram?" over on our NYT Spelling Bee Answers segment. We have scoured our database for pangram solutions so you can uphold The Queen Bee! status and keep your streak streamlined.
               </p>
               
               <p>
