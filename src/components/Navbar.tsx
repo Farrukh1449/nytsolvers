@@ -100,9 +100,16 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchOpen }) => {
           <div className="flex-shrink-0 flex items-center">
             <a 
               href="/" 
-              className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-lime-600 bg-clip-text text-transparent hover:from-teal-700 hover:to-lime-700 transition-all duration-300"
+              className="flex items-center space-x-3 hover:opacity-80 transition-all duration-300"
             >
-              NYTSolvers
+              <img 
+                src="/Logo.png" 
+                alt="NYTSolvers Logo" 
+                className="h-10 w-auto"
+              />
+              <span className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-lime-600 bg-clip-text text-transparent">
+                NYTSolvers
+              </span>
             </a>
           </div>
 
