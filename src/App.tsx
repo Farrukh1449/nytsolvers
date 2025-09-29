@@ -49,6 +49,7 @@ import LATimesMiniHints from './pages/LATimesMiniHints';
 import LATimesCrosswordHints from './pages/LATimesCrosswordHints';
 import WordSaladHints from './pages/WordSaladHints';
 import BetweenleHints from './pages/BetweenleHints';
+import WhatIsWordleBlog from './pages/WhatIsWordleBlog';
 
 // Resource pages
 import Blogs from './pages/Blogs';
@@ -127,6 +128,7 @@ function App() {
       case '/word-salad-hints': return 'word-salad-hints';
       case '/betweenle-hints': return 'betweenle-hints';
       case '/blogs': return 'blogs';
+      case '/what-is-wordle': return 'what-is-wordle';
       case '/grammar': return 'grammar';
       case '/misspelling': return 'misspelling';
       case '/definitions': return 'definitions';
@@ -175,6 +177,7 @@ function App() {
       case 'word-salad-hints': return <WordSaladHints />;
       case 'betweenle-hints': return <BetweenleHints />;
       case 'blogs': return <Blogs />;
+      case 'what-is-wordle': return <WhatIsWordleBlog />;
       case 'grammar': return <Grammar />;
       case 'misspelling': return <Misspelling />;
       case 'definitions': return <Definitions />;

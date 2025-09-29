@@ -9,7 +9,7 @@ const Blogs: React.FC = () => {
   const blogPosts = [
     {
       title: 'Mastering Wordle: Advanced Strategies for Consistent Success',
-      excerpt: 'Learn the mathematical approach to Wordle that will improve your average score and help you solve puzzles in fewer guesses.',
+      excerpt: 'Discover everything you need to know about Wordle, from basic rules and strategy tips to its fascinating history and cultural impact.',
       author: 'Word Game Expert',
       date: 'January 15, 2025',
       readTime: '8 min read',
@@ -21,8 +21,8 @@ const Blogs: React.FC = () => {
       title: 'The Psychology Behind NYT Connections Puzzles',
       excerpt: 'Discover how understanding cognitive patterns can help you identify connections faster and solve puzzles more efficiently.',
       author: 'Puzzle Analyst',
-      date: 'January 12, 2025',
-      readTime: '6 min read',
+      date: 'January 20, 2025',
+      readTime: '12 min read',
       category: 'Psychology',
       href: '/blog/connections-psychology',
       gradient: 'from-blue-400 to-indigo-500'
@@ -54,7 +54,7 @@ const Blogs: React.FC = () => {
       date: 'January 5, 2025',
       readTime: '7 min read',
       category: 'Education',
-      href: '/blog/vocabulary-building',
+      href: 'what-is-wordle',
       gradient: 'from-green-400 to-teal-500'
     },
     {
