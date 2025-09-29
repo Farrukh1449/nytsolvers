@@ -537,6 +537,15 @@ const Blogs: React.FC = () => {
                   {post.excerpt}
                 </p>
 
+                {/* Hero Image */}
+                <div className="mb-8">
+                  <img 
+                    src="/Generated_Image_September_29_2025_-_4_45PM copy.png" 
+                    alt="Mastering Wordle: Advanced Strategies - Illustrated guide showing Wordle game mechanics and strategic thinking"
+                    className="w-full h-auto rounded-2xl shadow-lg"
+                  />
+                </div>
+
                 {/* Author and Date */}
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center">
