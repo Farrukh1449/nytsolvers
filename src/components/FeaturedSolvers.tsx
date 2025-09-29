@@ -83,54 +83,54 @@ const FeaturedSolvers: React.FC = () => {
         </div>
 
         {/* Flip Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {featuredSolvers.map((solver, index) => (
             <div
               key={solver.title}
-              className="flip-card h-80"
+              className="flip-card h-72 sm:h-80"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flip-card-inner">
                 {/* Front Side */}
-                <div className="flip-card-front bg-white rounded-2xl shadow-lg border border-gray-100 p-8 flex flex-col items-center justify-center text-center">
+                <div className="flip-card-front bg-white rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8 flex flex-col items-center justify-center text-center">
                   {/* Large SVG Icon */}
-                  <div className={`w-20 h-20 ${solver.iconColor} mb-6 transform group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-16 h-16 sm:w-20 sm:h-20 ${solver.iconColor} mb-4 sm:mb-6 transform group-hover:scale-110 transition-transform duration-300`}>
                     <solver.icon className="w-full h-full" />
                   </div>
                   
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-lg sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                     {solver.title}
                   </h3>
                   
                   {/* Stats */}
                   <div className="flex items-center text-green-500">
                     <TrendingUp className="w-4 h-4 mr-1" />
-                    <span className="text-sm font-medium">{solver.stats}</span>
+                    <span className="text-xs sm:text-sm font-medium">{solver.stats}</span>
                   </div>
                 </div>
 
                 {/* Back Side */}
-                <div className={`flip-card-back bg-gradient-to-br ${solver.bgGradient} rounded-2xl shadow-lg border border-gray-100 p-8 flex flex-col justify-between relative overflow-hidden`}>
+                <div className={`flip-card-back bg-gradient-to-br ${solver.bgGradient} rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden`}>
                   {/* Background Icon with Low Opacity */}
-                  <div className="absolute top-4 right-4 w-20 h-20 opacity-10 pointer-events-none text-gray-400">
+                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4 w-16 h-16 sm:w-20 sm:h-20 opacity-10 pointer-events-none text-gray-400">
                     <solver.icon className="w-full h-full" />
                   </div>
                   
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Icon */}
-                    <div className={`w-12 h-12 bg-gradient-to-r ${solver.gradient} rounded-xl flex items-center justify-center mb-4 shadow-lg`}>
-                      <solver.icon className="w-6 h-6 text-white" />
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r ${solver.gradient} rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-lg`}>
+                      <solver.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
                       {solver.title}
                     </h3>
                     
                     {/* Description */}
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
                       {solver.description}
                     </p>
                   </div>
@@ -138,7 +138,7 @@ const FeaturedSolvers: React.FC = () => {
                   {/* CTA Button */}
                   <a
                     href={solver.href}
-                    className={`inline-flex items-center justify-center w-full bg-gradient-to-r ${solver.gradient} text-white py-3 px-6 rounded-xl font-medium hover:shadow-lg transition-all duration-200 transform hover:scale-105 relative z-10`}
+                    className={`inline-flex items-center justify-center w-full bg-gradient-to-r ${solver.gradient} text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-medium hover:shadow-lg transition-all duration-200 transform hover:scale-105 relative z-10 text-sm sm:text-base`}
                   >
                     Try {solver.title.replace(' Solver', '').replace(' Hints', '')}
                     <ArrowRight className="w-4 h-4 ml-2" />

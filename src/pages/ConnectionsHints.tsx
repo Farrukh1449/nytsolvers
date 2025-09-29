@@ -92,17 +92,17 @@ const ConnectionsHints: React.FC = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           {/* Header */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-6 sm:mb-8">
             <div className="inline-flex items-center bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
               <Target className="w-4 h-4 mr-2" />
               NYT Connections Hints
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Connections <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Hints</span>
             </h1>
-            <div className="flex items-center justify-center space-x-4 text-gray-600 mb-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
               <div className="flex items-center">
                 <Calendar className="w-5 h-5 mr-2" />
                 {puzzleData.date}
@@ -115,48 +115,48 @@ const ConnectionsHints: React.FC = () => {
           </div>
 
           {/* Game Board Visual */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+          <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-8 mb-6 sm:mb-8">
             <div className="text-center mb-6">
-              <div className="bg-gray-800 text-white px-4 py-2 rounded-lg inline-block mb-4 text-sm">
+              <div className="bg-gray-800 text-white px-3 sm:px-4 py-2 rounded-lg inline-block mb-4 text-xs sm:text-sm">
                 Flip any "?" below to reveal the word
               </div>
             </div>
             
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {puzzleData.categories.map((category, categoryIndex) => (
                 <div key={category.name} className="relative">
-                  <div className={`${category.color} rounded-xl p-4 relative`}>
+                  <div className={`${category.color} rounded-xl p-3 sm:p-4 relative`}>
                     {/* Hint Button */}
                     <button
                       onClick={() => toggleHint(categoryIndex)}
-                      className="absolute top-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors duration-200 flex items-center"
+                      className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-gray-800 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-lg text-xs sm:text-sm font-medium hover:bg-gray-700 transition-colors duration-200 flex items-center"
                     >
                       <Lightbulb className="w-4 h-4 mr-1" />
-                      Hint
+                      <span className="hidden sm:inline">Hint</span>
                     </button>
                     
                     {/* Top hint box */}
-                    <div className="flex justify-center mb-4">
-                      <div className="bg-white/30 border-2 border-white/50 rounded-lg px-6 py-3 text-center">
+                    <div className="flex justify-center mb-3 sm:mb-4">
+                      <div className="bg-white/30 border-2 border-white/50 rounded-lg px-3 sm:px-6 py-2 sm:py-3 text-center">
                         {showHints[categoryIndex] ? (
-                          <span className="text-white font-semibold">{category.hint}</span>
+                          <span className="text-white font-semibold text-xs sm:text-sm">{category.hint}</span>
                         ) : (
-                          <span className="text-white text-2xl font-bold">?</span>
+                          <span className="text-white text-xl sm:text-2xl font-bold">?</span>
                         )}
                       </div>
                     </div>
                     
                     {/* Word boxes */}
-                    <div className="grid grid-cols-4 gap-3">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
                       {category.words.map((word, wordIndex) => (
                         <div
                           key={word}
-                          className="bg-white/30 border-2 border-white/50 rounded-lg px-4 py-3 text-center"
+                          className="bg-white/30 border-2 border-white/50 rounded-lg px-2 sm:px-4 py-2 sm:py-3 text-center"
                         >
                           {showAnswers ? (
-                            <span className="text-white font-semibold">{word}</span>
+                            <span className="text-white font-semibold text-xs sm:text-sm">{word}</span>
                           ) : (
-                            <span className="text-white text-xl font-bold">?</span>
+                            <span className="text-white text-lg sm:text-xl font-bold">?</span>
                           )}
                         </div>
                       ))}
@@ -167,17 +167,17 @@ const ConnectionsHints: React.FC = () => {
             </div>
             
             <div className="text-center mt-6">
-              <div className="bg-gray-800 text-white px-4 py-2 rounded-lg inline-block text-sm">
+              <div className="bg-gray-800 text-white px-3 sm:px-4 py-2 rounded-lg inline-block text-xs sm:text-sm">
                 Tap a word to place it into the right group
               </div>
             </div>
           </div>
 
           {/* Show Answers Button */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12 px-4">
             <button
               onClick={() => setShowAnswers(!showAnswers)}
-              className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
+              className={`w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
                 showAnswers 
                   ? 'bg-red-500 hover:bg-red-600 text-white' 
                   : 'bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white'
@@ -193,39 +193,39 @@ const ConnectionsHints: React.FC = () => {
       <div className="bg-gray-50 py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* You Might Need Help Section */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               You Might Need Help in Other <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">NYT Games</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4">
               Explore hints and solutions for other popular New York Times puzzle games
             </p>
           </div>
 
           {/* Related Games Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {relatedGames.map((game, index) => (
               <div
                 key={game.title}
                 className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="p-6">
+                <div className="p-4 sm:p-6">
                   {/* Icon */}
-                  <div className={`w-12 h-12 ${game.bgColor} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <game.icon className="w-6 h-6 text-gray-700" />
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 ${game.bgColor} rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <game.icon className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
                   </div>
 
                   {/* Title and Description */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors duration-300">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors duration-300">
                     {game.title}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
                     {game.description}
                   </p>
 
                   {/* CTA */}
-                  <div className="flex items-center text-blue-600 group-hover:text-blue-700 font-medium text-sm">
+                  <div className="flex items-center text-blue-600 group-hover:text-blue-700 font-medium text-xs sm:text-sm">
                     Get Hints
                     <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-200" />
                   </div>

@@ -158,24 +158,24 @@ const AllSolvers: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-teal-50 pt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6 sm:mb-8">
           <div className="inline-flex items-center bg-gradient-to-r from-orange-100 to-red-100 text-orange-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
             <Gamepad2 className="w-4 h-4 mr-2" />
             All Game Solvers
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Complete <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">Solver Collection</span>
           </h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
             Discover our comprehensive collection of word game solvers and puzzle tools. From classic games to modern mobile challenges.
           </p>
         </div>
 
         {/* Search and Filter */}
-        <div className="mb-12">
-          <div className="max-w-2xl mx-auto mb-8">
+        <div className="mb-8 sm:mb-12">
+          <div className="max-w-2xl mx-auto mb-6 sm:mb-8 px-4 sm:px-0">
             <div className="relative">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
@@ -183,18 +183,18 @@ const AllSolvers: React.FC = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search for game solvers..."
-                className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-2xl focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition-all duration-200 text-lg"
+                className="w-full pl-12 pr-4 py-3 sm:py-4 border-2 border-gray-200 rounded-2xl focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition-all duration-200 text-base sm:text-lg"
               />
             </div>
           </div>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 px-4">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
+                className={`px-3 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-200 text-sm sm:text-base ${
                   selectedCategory === category
                     ? 'bg-gradient-to-r from-teal-500 to-lime-500 text-white shadow-lg'
                     : 'bg-white text-gray-600 border border-gray-200 hover:border-teal-300 hover:text-teal-600'
@@ -207,8 +207,8 @@ const AllSolvers: React.FC = () => {
         </div>
 
         {/* Results Count */}
-        <div className="text-center mb-8">
-          <p className="text-gray-600">
+        <div className="text-center mb-6 sm:mb-8">
+          <p className="text-sm sm:text-base text-gray-600">
             Showing <span className="font-semibold text-teal-600">{filteredSolvers.length}</span> solver{filteredSolvers.length !== 1 ? 's' : ''}
             {selectedCategory !== 'all' && (
               <span> in <span className="font-semibold text-teal-600">{selectedCategory}</span></span>
@@ -217,7 +217,7 @@ const AllSolvers: React.FC = () => {
         </div>
 
         {/* Solvers Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {filteredSolvers.map((solver, index) => (
             <div
               key={solver.name}
@@ -228,11 +228,11 @@ const AllSolvers: React.FC = () => {
               <div className={`absolute inset-0 bg-gradient-to-br ${solver.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
               
               {/* Content */}
-              <div className="relative p-8">
+              <div className="relative p-4 sm:p-6 lg:p-8">
                 {/* Icon and Category */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${solver.color} rounded-2xl flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <solver.icon className="w-8 h-8 text-white" />
+                <div className="flex items-center justify-between mb-4 sm:mb-6">
+                  <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${solver.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <solver.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
                   <span className="text-xs font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
                     {solver.category}
@@ -240,17 +240,17 @@ const AllSolvers: React.FC = () => {
                 </div>
 
                 {/* Title and Description */}
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-teal-700 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-teal-700 transition-colors duration-300">
                   {solver.name}
                 </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed text-sm">
+                <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-xs sm:text-sm">
                   {solver.description}
                 </p>
 
                 {/* CTA Button */}
                 <a
                   href={solver.href}
-                  className={`inline-flex items-center justify-center w-full bg-gradient-to-r ${solver.color} text-white py-3 px-6 rounded-xl font-medium hover:shadow-lg transition-all duration-200 transform hover:scale-105`}
+                  className={`inline-flex items-center justify-center w-full bg-gradient-to-r ${solver.color} text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-medium hover:shadow-lg transition-all duration-200 transform hover:scale-105 text-sm sm:text-base`}
                 >
                   Try Solver
                   <Target className="w-4 h-4 ml-2" />
@@ -265,18 +265,18 @@ const AllSolvers: React.FC = () => {
 
         {/* No Results */}
         {filteredSolvers.length === 0 && (
-          <div className="text-center py-16">
+          <div className="text-center py-12 sm:py-16">
             <Search className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-600 mb-2">No solvers found</h3>
-            <p className="text-gray-500">Try adjusting your search or filter criteria</p>
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-600 mb-2">No solvers found</h3>
+            <p className="text-sm sm:text-base text-gray-500">Try adjusting your search or filter criteria</p>
           </div>
         )}
 
         {/* Back to Home */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-12 sm:mt-16 px-4">
           <a
             href="/"
-            className="inline-flex items-center bg-gradient-to-r from-teal-500 to-lime-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:from-teal-600 hover:to-lime-600 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
+            className="inline-flex items-center bg-gradient-to-r from-teal-500 to-lime-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold text-base sm:text-lg hover:from-teal-600 hover:to-lime-600 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
           >
             ← Back to Home
           </a>

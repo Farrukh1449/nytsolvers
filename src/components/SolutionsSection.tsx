@@ -77,7 +77,7 @@ const SolutionsSection: React.FC = () => {
         </div>
 
         {/* Solvers Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {solverCategories.map((solver, index) => (
             <div
               key={solver.title}
@@ -88,24 +88,24 @@ const SolutionsSection: React.FC = () => {
               <div className={`absolute inset-0 bg-gradient-to-br ${solver.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
               
               {/* Content */}
-              <div className="relative p-8">
+              <div className="relative p-6 sm:p-8">
                 {/* Icon */}
-                <div className={`w-16 h-16 bg-gradient-to-r ${solver.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                  <solver.icon className="w-8 h-8 text-white" />
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${solver.gradient} rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <solver.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
 
                 {/* Title and Description */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-teal-700 transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-teal-700 transition-colors duration-300">
                   {solver.title}
                 </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                   {solver.description}
                 </p>
 
                 {/* Features */}
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-1 sm:space-y-2 mb-4 sm:mb-6">
                   {solver.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-gray-500">
+                    <li key={idx} className="flex items-center text-xs sm:text-sm text-gray-500">
                       <div className="w-1.5 h-1.5 bg-teal-400 rounded-full mr-3 flex-shrink-0" />
                       {feature}
                     </li>
@@ -115,7 +115,7 @@ const SolutionsSection: React.FC = () => {
                 {/* CTA Button */}
                 <a
                   href={solver.href}
-                  className="inline-flex items-center justify-center w-full bg-gray-900 text-white py-3 px-6 rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200 group-hover:bg-gradient-to-r group-hover:from-teal-600 group-hover:to-lime-600"
+                  className="inline-flex items-center justify-center w-full bg-gray-900 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200 group-hover:bg-gradient-to-r group-hover:from-teal-600 group-hover:to-lime-600 text-sm sm:text-base"
                 >
                   Try Solver
                   <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" />

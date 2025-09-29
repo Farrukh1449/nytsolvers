@@ -95,7 +95,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchOpen }) => {
         : 'bg-gradient-to-r from-white/90 to-teal-50/90 backdrop-blur-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-14 sm:h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <a 
@@ -105,9 +105,9 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchOpen }) => {
               <img 
                 src="/Logo.png" 
                 alt="NYTSolvers Logo" 
-                className="h-10 w-auto"
+                className="h-8 sm:h-10 w-auto"
               />
-              <span className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-lime-600 bg-clip-text text-transparent">
+              <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-teal-600 to-lime-600 bg-clip-text text-transparent hidden sm:block">
                 NYTSolvers
               </span>
             </a>
@@ -122,7 +122,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchOpen }) => {
                 onMouseEnter={() => setActiveDropdown(section.title)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="flex items-center text-gray-700 hover:text-teal-600 font-medium transition-colors duration-200">
+                <button className="flex items-center text-gray-700 hover:text-teal-600 font-medium transition-colors duration-200 text-sm lg:text-base">
                   {section.title}
                   <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200" />
                 </button>
@@ -204,29 +204,31 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchOpen }) => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden bg-white border-t border-gray-100 transition-all duration-300 ${
+      <div className={`lg:hidden bg-white border-t border-gray-100 transition-all duration-300 overflow-y-auto max-h-screen ${
         isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
       } overflow-hidden`}>
-        <div className="px-4 py-2 space-y-2">
+        <div className="px-4 py-4 space-y-3 max-h-96 overflow-y-auto">
           {navigationItems.map((section) => (
-            <div key={section.title} className="border-b border-gray-100 last:border-b-0 pb-2">
-              <div className="font-medium text-gray-900 py-2">{section.title}</div>
-              <div className="pl-4 space-y-1">
+            <div key={section.title} className="border-b border-gray-100 last:border-b-0 pb-3">
+              <div className="font-medium text-gray-900 py-2 text-base">{section.title}</div>
+              <div className="pl-4 space-y-2">
                 {section.items.map((item) => (
                   <div key={item.name}>
                     <a
                       href={item.href}
                       className="block py-2 text-sm text-gray-600 hover:text-teal-600 transition-colors duration-200"
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.name}
                     </a>
                     {item.subItems && (
-                      <div className="pl-4 space-y-1">
+                      <div className="pl-4 space-y-1 mt-1">
                         {item.subItems.map((subItem) => (
                           <a
                             key={subItem.name}
                             href={subItem.href}
                             className="block py-1 text-xs text-gray-500 hover:text-teal-600 transition-colors duration-200"
+                            onClick={() => setIsMobileMenuOpen(false)}
                           >
                             {subItem.name}
                           </a>
@@ -243,6 +245,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchOpen }) => {
                  <a
                    href="/all-solvers"
                    className="block py-2 text-sm font-medium text-white bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-lg px-3 text-center transition-all duration-200"
+                   onClick={() => setIsMobileMenuOpen(false)}
                  >
                    Show All Solvers
                  </a>

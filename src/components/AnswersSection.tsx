@@ -92,7 +92,7 @@ const AnswersSection: React.FC = () => {
         </div>
 
         {/* Answer Pages Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {answerPages.map((page, index) => (
             <div
               key={page.title}
@@ -103,11 +103,11 @@ const AnswersSection: React.FC = () => {
               <div className={`absolute inset-0 bg-gradient-to-br ${page.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
               
               {/* Content */}
-              <div className="relative p-8">
+              <div className="relative p-6 sm:p-8">
                 {/* Header with Icon and Difficulty */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${page.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <page.icon className="w-8 h-8 text-white" />
+                <div className="flex items-center justify-between mb-4 sm:mb-6">
+                  <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${page.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <page.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${getDifficultyColor(page.difficulty)}`}>
                     {page.difficulty}
@@ -115,23 +115,23 @@ const AnswersSection: React.FC = () => {
                 </div>
 
                 {/* Title and Description */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-blue-700 transition-colors duration-300">
                   {page.title}
                 </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                   {page.description}
                 </p>
 
                 {/* Update Time */}
-                <div className="flex items-center text-sm text-gray-500 mb-6">
+                <div className="flex items-center text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6">
                   <Clock className="w-4 h-4 mr-2" />
-                  {page.updateTime}
+                  <span className="truncate">{page.updateTime}</span>
                 </div>
 
                 {/* CTA Button */}
                 <a
                   href={page.href}
-                  className="inline-flex items-center justify-center w-full bg-gray-900 text-white py-3 px-6 rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600"
+                  className="inline-flex items-center justify-center w-full bg-gray-900 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-medium hover:bg-gray-800 transition-colors duration-200 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 text-sm sm:text-base"
                 >
                   Get Today's Hints
                   <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" />

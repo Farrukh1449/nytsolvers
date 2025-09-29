@@ -74,33 +74,33 @@ const WordleSolver: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-white to-orange-50 pt-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6 sm:mb-8">
           <div className="inline-flex items-center bg-gradient-to-r from-yellow-100 to-orange-100 text-yellow-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
             <Target className="w-4 h-4 mr-2" />
             Wordle Solver
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Wordle <span className="bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">Solver</span>
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4">
             Enter your known letters and constraints to find the perfect Wordle solution
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* Input Section */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-4 sm:space-y-6">
             {/* Known Letters (Green) */}
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+            <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 flex items-center">
                 <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
                 Known Letters (Green)
               </h3>
-              <p className="text-gray-600 mb-4">Enter letters you know are in the correct position</p>
+              <p className="text-sm sm:text-base text-gray-600 mb-4">Enter letters you know are in the correct position</p>
               
-              <div className="flex space-x-3 justify-center">
+              <div className="flex space-x-2 sm:space-x-3 justify-center">
                 {knownLetters.map((letter, index) => (
                   <input
                     key={index}
@@ -112,7 +112,7 @@ const WordleSolver: React.FC = () => {
                       newLetters[index] = e.target.value.toUpperCase();
                       setKnownLetters(newLetters);
                     }}
-                    className="w-14 h-14 text-center text-2xl font-bold border-2 border-green-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all duration-200 bg-green-50"
+                    className="w-12 h-12 sm:w-14 sm:h-14 text-center text-lg sm:text-2xl font-bold border-2 border-green-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all duration-200 bg-green-50"
                     placeholder={(index + 1).toString()}
                   />
                 ))}
@@ -120,14 +120,14 @@ const WordleSolver: React.FC = () => {
             </div>
 
             {/* Wrong Position Letters (Yellow) */}
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+            <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-8">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 flex items-center">
                 <div className="w-5 h-5 bg-yellow-500 rounded-full mr-2" />
                 Wrong Position Letters (Yellow)
               </h3>
-              <p className="text-gray-600 mb-6">Enter letters that are in the word but in wrong positions</p>
+              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">Enter letters that are in the word but in wrong positions</p>
               
-              <div className="flex space-x-3 justify-center">
+              <div className="flex space-x-2 sm:space-x-3 justify-center">
                 {wrongPositions.map((letters, index) => (
                   <input
                     key={index}
@@ -138,7 +138,7 @@ const WordleSolver: React.FC = () => {
                       newPositions[index] = e.target.value.toUpperCase();
                       setWrongPositions(newPositions);
                     }}
-                    className="w-14 h-14 text-center text-sm font-bold border-2 border-yellow-300 rounded-lg focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition-all duration-200 bg-yellow-50"
+                    className="w-12 h-12 sm:w-14 sm:h-14 text-center text-xs sm:text-sm font-bold border-2 border-yellow-300 rounded-lg focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 transition-all duration-200 bg-yellow-50"
                     placeholder={(index + 1).toString()}
                   />
                 ))}
@@ -146,28 +146,28 @@ const WordleSolver: React.FC = () => {
             </div>
 
             {/* Excluded Letters (Gray) */}
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+            <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-8">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 flex items-center">
                 <XCircle className="w-5 h-5 text-gray-500 mr-2" />
                 Excluded Letters (Gray)
               </h3>
-              <p className="text-gray-600 mb-6">Enter letters that are not in the word</p>
+              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">Enter letters that are not in the word</p>
               
               <input
                 type="text"
                 value={wrongLetters}
                 onChange={(e) => setWrongLetters(e.target.value.toUpperCase())}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gray-500 focus:ring-2 focus:ring-gray-200 transition-all duration-200 text-center text-lg font-medium bg-gray-50"
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-gray-500 focus:ring-2 focus:ring-gray-200 transition-all duration-200 text-center text-base sm:text-lg font-medium bg-gray-50"
                 placeholder="Enter excluded letters (e.g., QWERT)"
               />
             </div>
 
             {/* Action Buttons */}
-            <div className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
               <button
                 onClick={handleSolve}
                 disabled={isLoading}
-                className="flex-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-4 px-6 rounded-2xl font-semibold text-lg hover:from-yellow-600 hover:to-orange-600 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center disabled:opacity-50"
+                className="flex-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-2xl font-semibold text-base sm:text-lg hover:from-yellow-600 hover:to-orange-600 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center disabled:opacity-50"
               >
                 {isLoading ? (
                   <RefreshCw className="w-5 h-5 mr-2 animate-spin" />
@@ -179,7 +179,7 @@ const WordleSolver: React.FC = () => {
               
               <button
                 onClick={handleReset}
-                className="px-6 py-4 border-2 border-gray-300 text-gray-700 rounded-2xl font-semibold hover:border-gray-400 hover:bg-gray-50 transition-all duration-300 flex items-center"
+                className="w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-4 border-2 border-gray-300 text-gray-700 rounded-2xl font-semibold hover:border-gray-400 hover:bg-gray-50 transition-all duration-300 flex items-center justify-center text-base sm:text-lg"
               >
                 <RefreshCw className="w-5 h-5 mr-2" />
                 Reset
@@ -190,12 +190,12 @@ const WordleSolver: React.FC = () => {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Tips */}
-            <div className="bg-white rounded-2xl shadow-lg p-6">
+            <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6">
               <div 
                 className="flex items-center justify-between cursor-pointer"
                 onClick={() => setShowHints(!showHints)}
               >
-                <h3 className="text-lg font-semibold text-gray-900 flex items-center">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900 flex items-center">
                   <Lightbulb className="w-5 h-5 text-yellow-500 mr-2" />
                   Pro Tips
                 </h3>
@@ -205,11 +205,11 @@ const WordleSolver: React.FC = () => {
               </div>
               
               {showHints && (
-                <div className="mt-4 space-y-3">
+                <div className="mt-4 space-y-2 sm:space-y-3">
                   {tips.map((tip, index) => (
                     <div key={index} className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 flex-shrink-0" />
-                      <p className="text-sm text-gray-600">{tip}</p>
+                      <p className="text-xs sm:text-sm text-gray-600">{tip}</p>
                     </div>
                   ))}
                 </div>
@@ -217,12 +217,12 @@ const WordleSolver: React.FC = () => {
             </div>
 
             {/* How to Use */}
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+            <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
                 <Info className="w-5 h-5 text-blue-500 mr-2" />
                 How to Use
               </h3>
-              <div className="space-y-3 text-sm text-gray-600">
+              <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-gray-600">
                 <p><strong className="text-green-600">Green:</strong> Letter is correct and in right position</p>
                 <p><strong className="text-yellow-600">Yellow:</strong> Letter is in word but wrong position</p>
                 <p><strong className="text-gray-600">Gray:</strong> Letter is not in the word</p>
@@ -234,16 +234,16 @@ const WordleSolver: React.FC = () => {
         {/* Results */}
         {results.length > 0 && (
           <div className="mt-12">
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+            <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6">
                 Possible Solutions ({results.length})
               </h3>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
                 {results.map((word, index) => (
                   <div
                     key={word}
-                    className="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-lg p-4 text-center font-bold text-lg text-gray-900 hover:from-yellow-200 hover:to-orange-200 transition-all duration-200 transform hover:scale-105 cursor-pointer"
+                    className="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-lg p-3 sm:p-4 text-center font-bold text-base sm:text-lg text-gray-900 hover:from-yellow-200 hover:to-orange-200 transition-all duration-200 transform hover:scale-105 cursor-pointer"
                     style={{
                       animationDelay: `${index * 0.05}s`,
                       animation: 'fadeInUp 0.5s ease-out forwards'
