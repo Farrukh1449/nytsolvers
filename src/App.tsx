@@ -57,6 +57,7 @@ import Grammar from './pages/Grammar';
 import Misspelling from './pages/Misspelling';
 import Definitions from './pages/Definitions';
 import AffectVsEffect from './pages/AffectVsEffect';
+import ContentTemplatesShowcase from './pages/ContentTemplatesShowcase';
 function App() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
@@ -133,6 +134,7 @@ function App() {
       case '/misspelling': return 'misspelling';
       case '/definitions': return 'definitions';
       case '/affect-vs-effect': return 'affect-vs-effect';
+      case '/content-templates': return 'content-templates';
       default: return 'home';
     }
   };
@@ -182,6 +184,7 @@ function App() {
       case 'misspelling': return <Misspelling />;
       case 'definitions': return <Definitions />;
       case 'affect-vs-effect': return <AffectVsEffect />;
+      case 'content-templates': return <ContentTemplatesShowcase />;
       default:
         return (
           <>
