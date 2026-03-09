@@ -320,50 +320,6 @@ const ConnectionsHints: React.FC = () => {
               </p>
             </div>
 
-            {/* Daily Games Hints & Answers Section */}
-            <div className="mb-12 pb-12 border-b border-gray-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Daily Games Hints & Answers</h3>
-              <p className="text-gray-600 mb-8 text-center">We also help our users decode other daily word-guessing games.</p>
-
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-8">
-                {[
-                  { name: 'Wordle Answers', icon: Target, href: '/wordle-hints', color: 'bg-green-100' },
-                  { name: 'Connections Answers', icon: Target, href: '/connections-hints', color: 'bg-purple-100' },
-                  { name: 'NYT Mini Answers', icon: Grid3X3, href: '/mini-crossword-hints', color: 'bg-blue-100' },
-                  { name: 'Strands Answers', icon: Target, href: '/strands-hints', color: 'bg-red-100' },
-                  { name: 'Spelling Bee Answers', icon: Zap, href: '/spelling-bee-hints', color: 'bg-yellow-100' }
-                ].map((game, index) => (
-                  <a
-                    key={game.name}
-                    href={game.href}
-                    className="group text-center"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div className={`w-16 h-16 ${game.color} rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                      <game.icon className="w-8 h-8 text-gray-700" />
-                    </div>
-                    <div className="text-sm font-medium text-gray-900 group-hover:text-blue-700 transition-colors duration-300">
-                      {game.name}
-                    </div>
-                    <div className="text-xs text-gray-500 mt-1">Jul 27, 2025</div>
-                  </a>
-                ))}
-              </div>
-
-              <p className="text-gray-600 mb-6 text-center">
-                We have our dedicated Connections answers page for a complete archive of past solutions. Scroll to the bottom, and you'll see all the answers from the NYT Connections Solutions History. We've been keeping track, so you don't have to.
-              </p>
-
-              <div className="text-center">
-                <a
-                  href="/connections-hints"
-                  className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 inline-block"
-                >
-                  See Past Connections Answers
-                </a>
-              </div>
-            </div>
-
             {/* You Might Need Help in Other NYT Games */}
             <div className="pb-12 border-b border-gray-200">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">You Might Need Help in Other NYT Games</h3>
