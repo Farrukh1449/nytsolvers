@@ -21,6 +21,7 @@ import WordsWithFriendsSolver from './pages/WordsWithFriendsSolver';
 import QuordleSolver from './pages/QuordleSolver';
 import LetterBoxedHints from './pages/LetterBoxedHints';
 import SpellingBeeHints from './pages/SpellingBeeHints';
+import RhymeFinder from './pages/RhymeFinder';
 
 // Letter word solvers
 import ThreeLetterWords from './pages/ThreeLetterWords';
@@ -102,6 +103,7 @@ function App() {
       case '/jumble-solver': return 'jumble-solver';
       case '/words-with-friends-solver': return 'words-with-friends-solver';
       case '/quordle-solver': return 'quordle-solver';
+      case '/rhyme-finder': return 'rhyme-finder';
       case '/3-letter-words': return '3-letter-words';
       case '/4-letter-words': return '4-letter-words';
       case '/5-letter-words': return '5-letter-words';
@@ -152,6 +154,7 @@ function App() {
       case 'jumble-solver': return <JumbleSolver />;
       case 'words-with-friends-solver': return <WordsWithFriendsSolver />;
       case 'quordle-solver': return <QuordleSolver />;
+      case 'rhyme-finder': return <RhymeFinder />;
       case '3-letter-words': return <ThreeLetterWords />;
       case '4-letter-words': return <FourLetterWords />;
       case '5-letter-words': return <FiveLetterWords />;
